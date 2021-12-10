@@ -14,6 +14,11 @@ from mephisto.data_model.worker import Worker
 from mephisto.abstractions.databases.local_database import LocalMephistoDB
 from mephisto.data_model.constants.assignment_state import AssignmentState
 
+
+from mephisto.operations.logger_core import get_logger, set_mephisto_log_level
+
+logger = get_logger(name=__name__)
+
 from typing import List, Optional, Any, Dict
 
 
@@ -81,15 +86,19 @@ class DataBrowser:
         assert (
             agent is not None
         ), f"Trying to get completed data from unassigned unit {unit}"
-        return {
-            "worker_id": agent.worker_id,
-            "unit_id": unit.db_id,
-            "assignment_id": unit.assignment_id,
-            "status": agent.db_status,
-            "data": agent.state.get_parsed_data(),
-            "task_start": agent.state.get_task_start(),
-            "task_end": agent.state.get_task_end(),
-        }
+        try:
+            return {
+                "worker_id": agent.worker_id,
+                "unit_id": unit.db_id,
+                "assignment_id": unit.assignment_id,
+                "status": agent.db_status,
+                "data": agent.state.get_parsed_data(),
+                "task_start": agent.state.get_task_start(),
+                "task_end": agent.state.get_task_end(),
+            }
+        except Exception as e:
+            logger.warn(f"Issue loading unit {unit}!")
+            raise e
 
     def get_workers_with_qualification(self, qualification_name: str) -> List[Worker]:
         """

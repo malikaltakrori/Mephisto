@@ -12,12 +12,14 @@ from mephisto.tools.data_browser import DataBrowser
 from mephisto.data_model.worker import Worker
 from mephisto.operations.utils import find_or_create_qualification
 import traceback
+import threading
 
 from typing import TYPE_CHECKING, Optional, Tuple, Callable, Dict, Any, List
 
 if TYPE_CHECKING:
     from mephisto.abstractions.database import MephistoDB
     from mephisto.data_model.unit import Unit
+    from mephisto.data_model.agent import Agent
 
 
 def _get_and_format_data(
@@ -135,6 +137,100 @@ def format_worker_stats(
     return f"({accepted_work} | {rejected_work + soft_rejected_work}({soft_rejected_work}) / {accepted_work + soft_rejected_work + rejected_work})"
 
 
+def _prep_qualifications(
+    db: "MephistoDB",
+    block_qualification: Optional[str] = None,
+    approve_qualification: Optional[str] = None,
+) -> None:
+    """
+    Ensure given qualifications are already initialized, if they are provided, and print information
+    about usage for each.
+    """
+    if block_qualification is not None:
+        created_block_qual = find_or_create_qualification(db, block_qualification)
+        print(
+            "When you pass or reject a task, the script gives you an option to disqualify the worker "
+            "from future tasks by assigning a qualification. If provided, this worker will no "
+            "longer be able to work on tasks where the set --block-qualification shares the same name "
+            f"you provided above: {block_qualification}\n"
+        )
+    if approve_qualification is not None:
+        created_approve_qual = find_or_create_qualification(db, approve_qualification)
+        print(
+            "You may use this script to establish a qualified worker pool by granting the provided "
+            f"approve qualification {approve_qualification} to workers you think understand the task "
+            "well. This will be provided as an option for workers you (A)pprove all on. "
+            "Future tasks can use this qual as a required qualification, as described in the "
+            "common qualification flows document."
+        )
+
+
+def _run_review_for_worker(
+    db: "MephistoDB",
+    format_data_for_printing: Callable[[Dict[str, Any]], str],
+    worker: "Worker",
+    w_units: List["Unit"],
+    block_qualification: Optional[str] = None,
+    approve_qualification: Optional[str] = None,
+) -> None:
+    """
+    Review all of the units for a given worker.
+    """
+    data_browser = DataBrowser(db=db)
+    options = ["a", "p", "r"]
+
+    apply_all_decision = None
+    reason = None
+    for idx, unit in enumerate(w_units):
+        print(
+            f"Current review for worker: ({idx+1}/{len(w_units)})"
+        )
+        print(format_data_for_printing(data_browser.get_data_from_unit(unit)))
+        if apply_all_decision is not None:
+            decision = apply_all_decision
+        else:
+            decision = input(
+                "Do you want to accept this work? (a)ccept, (r)eject, (p)ass: "
+            )
+        while decision.lower() not in options:
+            decision = input(
+                "Decision must be one of a, p, r. Use CAPS to apply to all remaining for worker: "
+            )
+
+        agent = unit.get_assigned_agent()
+        assert (
+            agent is not None
+        ), f"Can't make decision on None agent... issue with {unit}"
+        if decision.lower() == "a":
+            agent.approve_work()
+            if decision == "A" and approve_qualification is not None:
+                should_special_qualify = input(
+                    "Do you want to approve qualify this worker? (y)es/(n)o: "
+                )
+                if should_special_qualify.lower() in ["y", "yes"]:
+                    worker.grant_qualification(approve_qualification, 1)
+        elif decision.lower() == "p":
+            agent.soft_reject_work()
+            if apply_all_decision is None and block_qualification is not None:
+                should_soft_block = input(
+                    "Do you want to soft block this worker? (y)es/(n)o: "
+                )
+                if should_soft_block.lower() in ["y", "yes"]:
+                    worker.grant_qualification(block_qualification, 1)
+        else:  # decision = 'r'
+            if apply_all_decision is None:
+                reason = input("Why are you rejecting this work? ")
+                should_block = input(
+                    "Do you want to hard block this worker? (y)es/(n)o: "
+                )
+                if should_block.lower() in ["y", "yes"]:
+                    block_reason = input("Why permanently block this worker? ")
+                    worker.block_worker(block_reason)
+            agent.reject_work(reason)
+
+        if decision.lower() != decision:
+            apply_all_decision = decision.lower()
+
 def run_examine_by_worker(
     db: "MephistoDB",
     format_data_for_printing: Callable[[Dict[str, Any]], str],
@@ -157,35 +253,7 @@ def run_examine_by_worker(
     tasks = db.find_tasks(task_name=task_name)
     assert len(tasks) >= 1, f"No task found under name {task_name}"
 
-    print(
-        "You will be reviewing actual tasks with this flow. Tasks that you either Accept or Pass "
-        "will be paid out to the worker, while rejected tasks will not. Passed tasks will be "
-        "specially marked such that you can leave them out of your dataset. \n"
-        "You may enter the option in caps to apply it to the rest of the units for a given worker."
-    )
-    if block_qualification is not None:
-        created_block_qual = find_or_create_qualification(db, block_qualification)
-        print(
-            "When you pass or reject a task, the script gives you an option to disqualify the worker "
-            "from future tasks by assigning a qualification. If provided, this worker will no "
-            "longer be able to work on tasks where the set --block-qualification shares the same name "
-            f"you provided above: {block_qualification}\n"
-        )
-    if approve_qualification is not None:
-        created_approve_qual = find_or_create_qualification(db, approve_qualification)
-        print(
-            "You may use this script to establish a qualified worker pool by granting the provided "
-            f"approve qualification {approve_qualification} to workers you think understand the task "
-            "well. This will be provided as an option for workers you (A)pprove all on. "
-            "Future tasks can use this qual as a required qualification, as described in the "
-            "common qualification flows document."
-        )
-    print(
-        "**************\n"
-        "You should only reject tasks when it is clear the worker has acted in bad faith, and "
-        "didn't actually do the task. Prefer to pass on tasks that were misunderstandings.\n"
-        "**************\n"
-    )
+    _prep_qualifications(db, block_qualification, approve_qualification)
 
     units = data_browser.get_units_for_task_name(task_name)
 
@@ -193,10 +261,6 @@ def run_examine_by_worker(
     units = [u for u in units if u.get_status() == "completed"]
     reviews_left = len(units)
     previous_work_by_worker = get_worker_stats(others)
-
-    # Determine allowed options
-    options = ["a", "p", "r"]
-    options_string = "Do you want to accept this work? (a)ccept, (r)eject, (p)ass:"
 
     units_by_worker: Dict[str, List["Unit"]] = {}
 
@@ -210,66 +274,152 @@ def run_examine_by_worker(
     for w_id, w_units in units_by_worker.items():
         worker = Worker(db, w_id)
         worker_name = worker.worker_name
-        apply_all_decision = None
-        reason = None
-        for idx, unit in enumerate(w_units):
+        print(
+            f"Reviewing for worker {worker_name}, ({idx+1}/{len(w_units)}), "
+            f"Previous {format_worker_stats(w_id, previous_work_by_worker)} "
+            f"(total remaining: {reviews_left})"
+        )
+        _run_review_for_worker(
+            db,
+            format_data_for_printing,
+            worker,
+            w_units,
+            block_qualification=block_qualification,
+            approve_qualification=approve_qualification,
+        )
+        reviews_left -= len(w_units)
 
-            print(
-                f"Reviewing for worker {worker_name}, ({idx+1}/{len(w_units)}), "
-                f"Previous {format_worker_stats(w_id, previous_work_by_worker)} "
-                f"(total remaining: {reviews_left})"
-            )
-            reviews_left -= 1
-            print(format_data_for_printing(data_browser.get_data_from_unit(unit)))
-            if apply_all_decision is not None:
-                decision = apply_all_decision
-            else:
-                decision = input(
-                    "Do you want to accept this work? (a)ccept, (r)eject, (p)ass: "
-                )
-            while decision.lower() not in options:
-                decision = input(
-                    "Decision must be one of a, p, r. Use CAPS to apply to all remaining for worker: "
-                )
 
+def _run_on_all_in_thread(
+    units: List["Unit"],
+    action: Callable[["Agent"], None],
+):
+    """
+    Run the given action on all of the present units in the background
+    """
+    def __do_run():
+        for unit in units:
             agent = unit.get_assigned_agent()
             assert (
                 agent is not None
             ), f"Can't make decision on None agent... issue with {unit}"
-            if decision.lower() == "a":
-                agent.approve_work()
-                if decision == "A" and approve_qualification is not None:
-                    should_special_qualify = input(
-                        "Do you want to approve qualify this worker? (y)es/(n)o: "
-                    )
-                    if should_special_qualify.lower() in ["y", "yes"]:
-                        worker.grant_qualification(approve_qualification, 1)
-            elif decision.lower() == "p":
-                agent.soft_reject_work()
-                if apply_all_decision is None and block_qualification is not None:
-                    should_soft_block = input(
-                        "Do you want to soft block this worker? (y)es/(n)o: "
-                    )
-                    if should_soft_block.lower() in ["y", "yes"]:
-                        worker.grant_qualification(block_qualification, 1)
-            else:  # decision = 'r'
-                if apply_all_decision is None:
-                    reason = input("Why are you rejecting this work? ")
-                    should_block = input(
-                        "Do you want to hard block this worker? (y)es/(n)o: "
-                    )
-                    if should_block.lower() in ["y", "yes"]:
-                        block_reason = input("Why permanently block this worker? ")
-                        worker.block_worker(block_reason)
-                agent.reject_work(reason)
+            action(agent)
 
-            if decision.lower() != decision:
-                apply_all_decision = decision.lower()
+    thread = threading.Thread(target=__do_run)
+    thread.start()
+
+
+def run_examine_batched_worker(
+    db: "MephistoDB",
+    format_worker_for_printing: Callable[[Worker, List[Dict[str, Any]], List[Dict[str, Any]]], str],
+    format_data_for_printing: Callable[[Dict[str, Any]], str],
+    task_name: Optional[str] = None,
+    block_qualification: Optional[str] = None,
+    approve_qualification: Optional[str] = None,
+):
+    """
+    Script to review all of the work from a worker in a full batch. Gets all of the unreviewed
+    jobs for a worker, as well as any validation tasks the worker has done in this batch, and 
+    allows you to take action on the full worker or drill down.
+    """
+    data_browser = DataBrowser(db=db)
+
+    # Get initial arguments
+    if task_name is None:
+        task_name, block_qualification, approve_qualification = prompt_for_options(
+            task_name, block_qualification, approve_qualification
+        )
+
+    tasks = db.find_tasks(task_name=task_name)
+    assert len(tasks) >= 1, f"No task found under name {task_name}"
+
+    _prep_qualifications(db, block_qualification, approve_qualification)
+
+    units = data_browser.get_units_for_task_name(task_name)
+
+    others = [u for u in units if u.get_status() != "completed"]
+    units = [u for u in units if u.get_status() == "completed"]
+    reviews_left = len(units)
+    previous_work_by_worker = get_worker_stats(others)
+
+    # Determine allowed options
+    options = ["a", "p", "r", 'i']
+
+    units_by_worker: Dict[str, List["Unit"]] = {}
+
+    for u in units:
+        w_id = u.worker_id
+        if w_id not in units_by_worker:
+            units_by_worker[w_id] = []
+        units_by_worker[w_id].append(u)
+
+    # Run the review
+    for w_id, w_units in units_by_worker.items():
+        worker = Worker(db, w_id)
+        worker_name = worker.worker_name
+        real_units = [u for u in w_units if u.unit_index >= 0]
+        validation_units = [u for u in w_units if u.unit_index < 0]
+        if len(real_units) == 0:
+            continue # For now, skip validation-only reviews
+        print(
+            f"Reviewing for worker {worker_name}, ({len(w_units)}), "
+            f"Previous {format_worker_stats(w_id, previous_work_by_worker)} "
+            f"(total remaining: {reviews_left})"
+        )
+        real_data = []
+        for unit in real_units:
+            try:
+                real_data.append(data_browser.get_data_from_unit(unit))
+            except Exception as e:
+                print(f"Warning: skipping {unit} due to exception: {e}")
+        valid_data = []
+        for unit in validation_units:
+            try:
+                valid_data.append(data_browser.get_data_from_unit(unit))
+            except Exception as e:
+                print(f"Warning: skipping {unit} due to exception: {e}")
+        print(format_worker_for_printing(worker, real_data, valid_data))
+        decision = input(
+            "Do you want to accept this work? (a)ccept, (r)eject, (p)ass, (i)nspect: "
+        )
+        while decision.lower() not in options:
+            decision = input(
+                "Decision must be one of a, p, r, i: "
+            )
+        if decision.lower() == 'a':
+            _run_on_all_in_thread(real_units, lambda agent: agent.approve_work())
+        elif decision.lower() == 'p':
+            _run_on_all_in_thread(real_units, lambda agent: agent.soft_reject_work())
+            if block_qualification is not None:
+                should_soft_block = input(
+                    "Do you want to soft block this worker? (y)es/(n)o: "
+                )
+                if should_soft_block.lower() in ["y", "yes"]:
+                    worker.grant_qualification(block_qualification, 1)
+        elif decision.lower() == 'r':
+            reason = input(f"Why are you rejecting this work ({len(real_units)} units!)? ")
+            _run_on_all_in_thread(real_units, lambda agent: agent.reject_work(reason))
+        else:
+            print(
+                f"Manual review for worker {worker_name}, ({len(real_units)}), "
+                f"Previous {format_worker_stats(w_id, previous_work_by_worker)} "
+                f"(total remaining: {reviews_left})"
+            )
+            _run_review_for_worker(
+                db,
+                format_data_for_printing,
+                worker,
+                w_units,
+                block_qualification=block_qualification,
+                approve_qualification=approve_qualification,
+            )
+        reviews_left -= len(w_units)
 
 
 def run_examine_or_review(
     db: "MephistoDB",
-    format_data_for_printing: Callable[[Dict[str, Any]], str],
+    format_data_for_printing: Optional[Callable[[Dict[str, Any]], str]]=None,
+    format_worker_for_printing: Optional[Callable[[Worker, List[Dict[str, Any]], List[Dict[str, Any]]], str]]=None,
 ) -> None:
     do_review = input(
         "Do you want to (r)eview, or (e)xamine data? Default "
@@ -278,7 +428,22 @@ def run_examine_or_review(
     )
 
     if do_review.lower().startswith("r"):
-        run_examine_by_worker(db, format_data_for_printing)
+        print(
+            "You will be reviewing actual tasks with this flow. Tasks that you either Accept or Pass "
+            "will be paid out to the worker, while rejected tasks will not. Passed tasks will be "
+            "specially marked such that you can leave them out of your dataset. \n"
+            "You may enter the option in caps to apply it to the rest of the units for a given worker."
+        )
+        print(
+            "**************\n"
+            "You should only reject tasks when it is clear the worker has acted in bad faith, and "
+            "didn't actually do the task. Prefer to pass on tasks that were misunderstandings.\n"
+            "**************\n"
+        )
+        if format_worker_for_printing is not None:
+            run_examine_batched_worker(db, format_worker_for_printing, format_data_for_printing)
+        elif format_data_for_printing is not None:
+            run_examine_by_worker(db, format_data_for_printing)
     else:
         start = 0
         end = 15

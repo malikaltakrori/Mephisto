@@ -9,7 +9,7 @@
     "sb": "yarn workspace sb storybook",
     "docs": "yarn docs:start",
     "docs:start": "yarn workspace web docusaurus start",
-    "docs:static": "pdoc mephisto --logo https://mephisto.ai/img/logo.svg -o docs/web/static/python_api/ -t docs/web/pdoc_src",
+    "docs:static": "pdoc --force mephisto --output-dir docs/web/docs/reference/ --template-dir docs/web/pdoc_src -c show_type_annotations=True",
     "docs:build": "yarn workspace web build",
     "docs:serve": "yarn workspace web serve",
     "build-all": "yarn workspaces foreach -ptAv run build"

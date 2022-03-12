@@ -13,12 +13,6 @@ from gevent.pywsgi import WSGIServer  # type: ignore
 
 app = Flask(__name__)
 
-MY_DIR = os.path.abspath(os.path.dirname(__file__))
-LOG_BASE = os.path.join(MY_DIR, "access_logs")
-PASSWORD_FILE = os.path.join(MY_DIR, "access_key.txt")
-with open(PASSWORD_FILE, "r") as password_file:
-    PASSWORD = password_file.read().strip()
-
 
 @app.route("/view_logs")
 def get_details():
@@ -59,6 +53,14 @@ def main_route(path):
     return render_template("landing.html")
 
 
-http_server = WSGIServer(("", 5000), app)
-print("Launching server!", http_server)
-http_server.serve_forever()
+if __name__ == "__main__":
+
+    MY_DIR = os.path.abspath(os.path.dirname(__file__))
+    LOG_BASE = os.path.join(MY_DIR, "access_logs")
+    PASSWORD_FILE = os.path.join(MY_DIR, "access_key.txt")
+    with open(PASSWORD_FILE, "r") as password_file:
+        PASSWORD = password_file.read().strip()
+
+    http_server = WSGIServer(("", 5000), app)
+    print("Launching server!", http_server)
+    http_server.serve_forever()

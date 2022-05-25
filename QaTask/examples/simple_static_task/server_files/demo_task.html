@@ -27,6 +27,15 @@
 </div>
 
 <!-- Content -->
+<!-- <p>
+
+  <div  data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="true" aria-controls="collapseExample1"> 
+    hi
+  </div>
+</p>
+<div class="collapse" id="collapseExample1">
+    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+</div> -->
 
 <section class="container" id="Other" style="
     margin-bottom: 15px;
@@ -36,43 +45,51 @@
   ">
   <div class="row col-xs-13 col-md-13">
     <!-- Instructions -->
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <strong> Instructions </strong>
-      </div>
+    <full-instructions header="Classification Instructions">
+      <div class="panel panel-primary">
+        <div class="panel-heading"  data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true" aria-controls="collapseExample"> 
+          <strong> Instructions </strong>
+        </div>
 
-      <div class="panel-body" id="instructions">
-        <p>
-          <strong padding=10%>
-            Hello, and thank you for participating in our study. Please start by <a
-              href=https://www.dropbox.com/s/0ue1djz8u0effgp/Consent_form_QAAnon_4_June_2021.pdf?dl=1>dowloading the
-              conset form</a>
-            and saving it for your future reference. By completing this task you are giving your conset to participate
-            in this study.
-          </strong>
-        </p>
+        <div class="collapse" id="collapseExample">
 
-        <ul>
-          <li>
-            brave soldier - I fight to defend my honor. I will keep my village
-            safe from any threat. It is my duty to protect my beloved wife.
-            &nbsp; -<em> good </em> (the character name and description fit
-            well)
-          </li>
-          <li>
-            noble - I am the daughter of a great warrior. My family name carries
-            a lot of weight where I live, so I'm accepted amongst nobility.
-            &nbsp; - <em>passable</em> (the character description is technically
-            not a noble, but accepted by nobles)
-          </li>
-          <li>
-            pig - I cannot stand being part of royalty. I long to adventure at
-            sea. My father would never allow it though. &nbsp;-
-            <em>bad</em> (the character is a pig, not royalty)
-          </li>
-        </ul>
+          <!-- <strong>THis is hidden</strong> -->
+        
+        <div class="panel-body" id="instructions">
+          <p>
+            <strong padding=10%>
+              Hello, and thank you for participating in our study! <br>
+              Please start by <a
+                href=https://www.dropbox.com/s/0ue1djz8u0effgp/Consent_form_QAAnon_4_June_2021.pdf?dl=1>dowloading the
+                conset form</a>
+              and saving it for your future reference. By completing this task you are giving your conset to participate
+              in this study.
+            </strong>
+          </p>
+
+          <ul>
+            <li>
+              brave soldier - I fight to defend my honor. I will keep my village
+              safe from any threat. It is my duty to protect my beloved wife.
+              &nbsp; -<em> good </em> (the character name and description fit
+              well)
+            </li>
+            <li>
+              noble - I am the daughter of a great warrior. My family name carries
+              a lot of weight where I live, so I'm accepted amongst nobility.
+              &nbsp; - <em>passable</em> (the character description is technically
+              not a noble, but accepted by nobles)
+            </li>
+            <li>
+              pig - I cannot stand being part of royalty. I long to adventure at
+              sea. My father would never allow it though. &nbsp;-
+              <em>bad</em> (the character is a pig, not royalty)
+            </li>
+          </ul>
+        </div>
+      </div> 
       </div>
-    </div>
+    </full-instructions>
     <!-- End Instructions -->
     <!-- Content Body -->
     <div id="big_one" class="form_Qs">
@@ -80,34 +97,36 @@
         <div id="dynamic_one" class="split up centered">
           <p><strong>Sentence 1: </strong>${original_sentence}</p>
           <p><strong>Sentence 2: </strong>${anonymized_sentence}</p>
+          <p>
+            You can consult the context below if you think it will help you make a better decision.
+          </p>
         </div>
         <div id="scrolled_one" class="split down centered">
-          <p><strong>Original Text</strong>: ${original_text_before} <span id="jump_to_this_location">
-              <strong><mark>${original_sentence}</mark></strong></span> ${original_text_after}</p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
-                pellentesque eleifend. Curabitur congue tortor in sapien aliquam
-                hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
-                augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
-                sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
-                ullamcorper mauris ultrices consectetur.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
-                pellentesque eleifend. Curabitur congue tortor in sapien aliquam
-                hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
-                augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
-                sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
-                ullamcorper mauris ultrices consectetur.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
-                pellentesque eleifend. Curabitur congue tortor in sapien aliquam
-                hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
-                augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
-                sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
-                ullamcorper mauris ultrices consectetur.
-              </p>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
+            pellentesque eleifend. Curabitur congue tortor in sapien aliquam
+            hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
+            augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
+            sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
+            ullamcorper mauris ultrices consectetur.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
+            pellentesque eleifend. Curabitur congue tortor in sapien aliquam
+            hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
+            augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
+            sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
+            ullamcorper mauris ultrices consectetur.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
+            pellentesque eleifend. Curabitur congue tortor in sapien aliquam
+            hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
+            augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
+            sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
+            ullamcorper mauris ultrices consectetur.
+          </p>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
             pellentesque eleifend. Curabitur congue tortor in sapien aliquam
@@ -144,7 +163,8 @@
               <br>
               <input name="answers" type="radio" id="bad" value=0> Completely Different<br>
               <input name="answers" type="radio" id="meh" value=0.5> Slightly different <br>
-              <input name="answers" type="radio" id="good" value=1> Identical
+              <!-- <input name="answers" type="radio" id="good" value="1 ${mephisto_agent_id}"> Identical -->
+              <input name="answers" type="radio" id="good" value="1"> Identical
 
               <!-- <select class="form-control" name="rating">
               <option selected="selected" value="">(select one)</option>
@@ -155,7 +175,7 @@
             </div>
           </fieldset>
         </section>
-      </div>      
+      </div>
     </div>
 
     <div id="stupid_one">
@@ -167,7 +187,7 @@
       </p>
     </div>
 
-    
+
   </div>
   <!-- End Content Body -->
   </div>
@@ -181,7 +201,7 @@
   });
 
   window.onload = function () {
-    alert('Page is loaded');
+    /** alert('Page is loaded'); */
     document.getElementById("here").scrollIntoView(
       { behavior: "smooth", block: "end", inline: "nearest" }
     );
@@ -196,7 +216,7 @@
   fieldset {
     width: 100%;
     padding: 10px;
-    background: #dda7a7;
+    background: #fbb36b;
     border-radius: 5px;
     margin-bottom: 5px;
     display: flex;
@@ -224,14 +244,14 @@
   .right_content {
     width: 25%;
     height: 100px;
-    background-color: green;
+    /*background-color: green; */
     margin: 10px;
   }
 
   .left_content {
     width: 75%;
     height: 100px;
-    background-color: green;
+    /*background-color: green; */
     margin: 10px;
   }
 
@@ -273,7 +293,7 @@
     width: 100%;
   }
 
-  #stupid_one{
+  #stupid_one {
     display: flex;
   }
 </style>

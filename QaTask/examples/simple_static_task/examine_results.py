@@ -25,10 +25,10 @@ def format_for_printing_data(data):
     )
 
     inputs = contents["inputs"]
-    inputs_string = f"Character: {inputs['character_name']}\nDescription: {inputs['character_description']}\n"
+    inputs_string = f"Origin: {inputs['original_sentence']}\nAnony.: {inputs['anonymized_sentence']}\n"
 
     outputs = contents["outputs"]
-    output_string = f"   Rating: {outputs['rating']}\n"
+    output_string = f"   Rating: {outputs['answers']}\n"
     found_files = outputs.get("files")
     if found_files is not None:
         file_dir = Unit.get(db, data["unit_id"]).get_assigned_agent().get_data_dir()

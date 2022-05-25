@@ -51,7 +51,7 @@
     font-size: 0.9em;
   "
 >
-  <div class="row col-xs-12 col-md-12">
+  <div class="row col-xs-13 col-md-13">
     <!-- Instructions -->
     <div class="panel panel-primary">
       <div class="panel-heading">
@@ -60,14 +60,25 @@
 
       <div class="panel-body" id="instructions">
         <p>
-          Below you are given a character name and description for someone from
-          a fantasy story. Please rate how well the character description
-          matches the name.
-          <br />
-          Below are some examples:
-        </p>
+          <strong padding=10%>
+          Hello, and thank you for participating in our study. Please start by <a href=https://www.dropbox.com/s/0ue1djz8u0effgp/Consent_form_QAAnon_4_June_2021.pdf?dl=1>dowloading the conset form</a> 
+          and saving it for your future reference. By completing this task you are giving your conset to participate in this study.
+          </strong> 
+          </p>
 
         <ul>
+          <li>
+            brave soldier - I fight to defend my honor. I will keep my village
+            safe from any threat. It is my duty to protect my beloved wife.
+            &nbsp; -<em> good </em> (the character name and description fit
+            well)
+          </li>
+          <li>
+            brave soldier - I fight to defend my honor. I will keep my village
+            safe from any threat. It is my duty to protect my beloved wife.
+            &nbsp; -<em> good </em> (the character name and description fit
+            well)
+          </li>
           <li>
             brave soldier - I fight to defend my honor. I will keep my village
             safe from any threat. It is my duty to protect my beloved wife.
@@ -90,34 +101,75 @@
     </div>
     <!-- End Instructions -->
     <!-- Content Body -->
-
-    <div class="input_location">
-      <p>
-        <strong> Character name: </strong>
-        <span id="char"> ${character_name} </span>
-      </p>
-      <p>
-        <strong> Description: </strong>
-        <span id="persona"> ${character_description} </span>
-      </p>
-    </div>
+      <div id="dynamic_one" class="split up centered">                   
+        <p><strong>Sentence 1: </strong>${original_sentence}</p>
+        <p><strong>Sentence 2: </strong>${anonymized_sentence}</p>
+      </div>
+      <div class="split down centered">                  
+        <p><strong>Original Text</strong>: ${original_text_before} <span id="jump_to_this_location"> <strong><mark>${original_sentence}</mark></strong></span> ${original_text_after}</p>
+        <p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipiti
+pellentesque eleifend. Curabitur congue tortor in sapien aliquam
+hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcm
+augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
+sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
+ullamcorper mauris ultrices consectetur.
+</p>
+  <p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
+pellentesque eleifend. Curabitur congue tortor in sapien aliquam
+hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
+augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
+sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
+ullamcorper mauris ultrices consectetur.
+</p>
+  <p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
+pellentesque eleifend. Curabitur congue tortor in sapien aliquam
+hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
+augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
+sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
+ullamcorper mauris ultrices consectetur.
+</p>
+  <p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
+pellentesque eleifend. Curabitur congue tortor in sapien aliquam
+hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
+augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
+sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
+ullamcorper mauris ultrices consectetur.
+  <span id='here'><mark> Some extra text Some extra text Some extra text Some extra text Some extra text Some extra text Some extra text Some extra text Some extra text </mark></span></p>
+  <p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
+pellentesque eleifend. Curabitur congue tortor in sapien aliquam
+hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
+augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
+sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
+ullamcorper mauris ultrices consectetur.
+</p>
+      </div>  
 
     <section>
       <fieldset>
-        <div class="input-group">
-          <label>Rate the matching of character name to description</label>
-          <select class="form-control" name="rating">
+        <div class="input-group split_right" name="rating">
+          <label>How similar is the meaning of these two pieces of text?</label>
+          <br>
+          <input name="answers" type="radio" id="bad" value=0> Completely Different<br>
+          <input name="answers" type="radio" id="meh" value=0.5> Slightly different <br>
+          <input name="answers" type="radio" id="good" value=1> Identical
+
+            <!-- <select class="form-control" name="rating">
             <option selected="selected" value="">(select one)</option>
             <option value="good">Good</option>
             <option value="passable">Passable</option>
-            <option value="bad">Bad</option>
+            <option value="bad">Bad</option> -->
           </select>
-          <input type="file" name="file1" id="upload_files_1" />
-        </div>
+        
       </fieldset>
     </section>
-
-    <p>
+  </div>
+    
+  <p>
       <small>
         <strong> Your Agent Id: </strong>
         <span id="agent_id"> ${mephisto_agent_id} </span>
@@ -133,18 +185,65 @@
     $("#instructions").clone().appendTo(modal_body);
     $(".modal").modal("show");
   });
+
+  window.onload = function() {
+    alert('Page is loaded');
+    document.getElementById("here").scrollIntoView(
+    {behavior: "smooth", block: "end", inline: "nearest"}
+  );
+};
+
+
+
+
 </script>
 
 <style type="text/css">
   fieldset {
+    width: 45%;
     padding: 10px;
-    background: #fbfbfb;
+    background: #dda7a7;
     border-radius: 5px;
     margin-bottom: 5px;
   }
 
-  .input_location {
-    background-color: blanchedalmond;
-    padding: 10px;
+
+
+  /* Split the screen in half */
+  .split {
+    height: 50%;
+    width: 75%;
+  /*   position: fixed; */
+    z-index: 1;
+  /*   top: 0; */
+  /*   overflow-x: hidden; */
+    padding-top: 5px;
+  }
+
+
+
+  /* Control the left side */
+  .up {
+    top: 0;
+    display: inline-block;
+    display:-moz-inline-stack;   
+    height: fit-content;
+    background-color: powderblue;
+    border:1px;
+  }
+
+  /* Control the right side */
+  .down {
+    bottom: 0;
+    background-color: white;
+    overflow: scroll;
+    height: 200px;
+  }
+
+  /* If you want the content centered horizontally and vertically */
+  .centered {
+  top: 50%;
+  left: 0%;
+  text-align: left;
   }
 </style>

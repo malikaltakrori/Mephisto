@@ -1,29 +1,16 @@
 <!-- Bootstrap v3.0.3 -->
-<link
-  rel="stylesheet"
-  href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-/>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<!-- Modal --><!-- MODAL -->
+<!-- Modal -->
+<!-- MODAL -->
 
-<div
-  aria-hidden="true"
-  aria-labelledby="exampleModalLabel"
-  class="modal fade in"
-  id="exampleModal"
-  role="dialog"
-  tabindex="-1"
->
+<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade in" id="exampleModal" role="dialog"
+  tabindex="-1">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button
-          aria-label="Close"
-          class="close"
-          data-dismiss="modal"
-          type="button"
-        >
+        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
           <span aria-hidden="true"> &times; </span>
         </button>
       </div>
@@ -41,16 +28,12 @@
 
 <!-- Content -->
 
-<section
-  class="container"
-  id="Other"
-  style="
+<section class="container" id="Other" style="
     margin-bottom: 15px;
     padding: 10px;
     font-family: Verdana, Geneva, sans-serif;
     font-size: 0.9em;
-  "
->
+  ">
   <div class="row col-xs-13 col-md-13">
     <!-- Instructions -->
     <div class="panel panel-primary">
@@ -61,24 +44,15 @@
       <div class="panel-body" id="instructions">
         <p>
           <strong padding=10%>
-          Hello, and thank you for participating in our study. Please start by <a href=https://www.dropbox.com/s/0ue1djz8u0effgp/Consent_form_QAAnon_4_June_2021.pdf?dl=1>dowloading the conset form</a> 
-          and saving it for your future reference. By completing this task you are giving your conset to participate in this study.
-          </strong> 
-          </p>
+            Hello, and thank you for participating in our study. Please start by <a
+              href=https://www.dropbox.com/s/0ue1djz8u0effgp/Consent_form_QAAnon_4_June_2021.pdf?dl=1>dowloading the
+              conset form</a>
+            and saving it for your future reference. By completing this task you are giving your conset to participate
+            in this study.
+          </strong>
+        </p>
 
         <ul>
-          <li>
-            brave soldier - I fight to defend my honor. I will keep my village
-            safe from any threat. It is my duty to protect my beloved wife.
-            &nbsp; -<em> good </em> (the character name and description fit
-            well)
-          </li>
-          <li>
-            brave soldier - I fight to defend my honor. I will keep my village
-            safe from any threat. It is my duty to protect my beloved wife.
-            &nbsp; -<em> good </em> (the character name and description fit
-            well)
-          </li>
           <li>
             brave soldier - I fight to defend my honor. I will keep my village
             safe from any threat. It is my duty to protect my beloved wife.
@@ -101,81 +75,101 @@
     </div>
     <!-- End Instructions -->
     <!-- Content Body -->
-      <div id="dynamic_one" class="split up centered">                   
-        <p><strong>Sentence 1: </strong>${original_sentence}</p>
-        <p><strong>Sentence 2: </strong>${anonymized_sentence}</p>
+    <div id="big_one" class="form_Qs">
+      <div id="left" class="left_content">
+        <div id="dynamic_one" class="split up centered">
+          <p><strong>Sentence 1: </strong>${original_sentence}</p>
+          <p><strong>Sentence 2: </strong>${anonymized_sentence}</p>
+        </div>
+        <div id="scrolled_one" class="split down centered">
+          <p><strong>Original Text</strong>: ${original_text_before} <span id="jump_to_this_location">
+              <strong><mark>${original_sentence}</mark></strong></span> ${original_text_after}</p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
+                pellentesque eleifend. Curabitur congue tortor in sapien aliquam
+                hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
+                augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
+                sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
+                ullamcorper mauris ultrices consectetur.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
+                pellentesque eleifend. Curabitur congue tortor in sapien aliquam
+                hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
+                augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
+                sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
+                ullamcorper mauris ultrices consectetur.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
+                pellentesque eleifend. Curabitur congue tortor in sapien aliquam
+                hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
+                augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
+                sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
+                ullamcorper mauris ultrices consectetur.
+              </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
+            pellentesque eleifend. Curabitur congue tortor in sapien aliquam
+            hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
+            augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
+            sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
+            ullamcorper mauris ultrices consectetur.
+            <span id='here'><mark> Some extra text Some extra text Some extra text Some extra text Some extra text Some
+                extra text Some extra text Some extra text Some extra text </mark></span>
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
+            pellentesque eleifend. Curabitur congue tortor in sapien aliquam
+            hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
+            augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
+            sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
+            ullamcorper mauris ultrices consectetur.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
+            pellentesque eleifend. Curabitur congue tortor in sapien aliquam
+            hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
+            augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
+            sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
+            ullamcorper mauris ultrices consectetur.
+          </p>
+        </div>
       </div>
-      <div class="split down centered">                  
-        <p><strong>Original Text</strong>: ${original_text_before} <span id="jump_to_this_location"> <strong><mark>${original_sentence}</mark></strong></span> ${original_text_after}</p>
-        <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipiti
-pellentesque eleifend. Curabitur congue tortor in sapien aliquam
-hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcm
-augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
-sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
-ullamcorper mauris ultrices consectetur.
-</p>
-  <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
-pellentesque eleifend. Curabitur congue tortor in sapien aliquam
-hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
-augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
-sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
-ullamcorper mauris ultrices consectetur.
-</p>
-  <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
-pellentesque eleifend. Curabitur congue tortor in sapien aliquam
-hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
-augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
-sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
-ullamcorper mauris ultrices consectetur.
-</p>
-  <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
-pellentesque eleifend. Curabitur congue tortor in sapien aliquam
-hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
-augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
-sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
-ullamcorper mauris ultrices consectetur.
-  <span id='here'><mark> Some extra text Some extra text Some extra text Some extra text Some extra text Some extra text Some extra text Some extra text Some extra text </mark></span></p>
-  <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
-pellentesque eleifend. Curabitur congue tortor in sapien aliquam
-hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
-augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
-sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
-ullamcorper mauris ultrices consectetur.
-</p>
-      </div>  
+      <div id="right" class="right_content">
+        <section>
+          <fieldset>
+            <div class="input-group split_right" name="rating">
+              <label>How similar is the meaning of these two pieces of text?</label>
+              <br>
+              <input name="answers" type="radio" id="bad" value=0> Completely Different<br>
+              <input name="answers" type="radio" id="meh" value=0.5> Slightly different <br>
+              <input name="answers" type="radio" id="good" value=1> Identical
 
-    <section>
-      <fieldset>
-        <div class="input-group split_right" name="rating">
-          <label>How similar is the meaning of these two pieces of text?</label>
-          <br>
-          <input name="answers" type="radio" id="bad" value=0> Completely Different<br>
-          <input name="answers" type="radio" id="meh" value=0.5> Slightly different <br>
-          <input name="answers" type="radio" id="good" value=1> Identical
+              <!-- <select class="form-control" name="rating">
+              <option selected="selected" value="">(select one)</option>
+              <option value="good">Good</option>
+              <option value="passable">Passable</option>
+              <option value="bad">Bad</option> 
+            </select> -->
+            </div>
+          </fieldset>
+        </section>
+      </div>      
+    </div>
 
-            <!-- <select class="form-control" name="rating">
-            <option selected="selected" value="">(select one)</option>
-            <option value="good">Good</option>
-            <option value="passable">Passable</option>
-            <option value="bad">Bad</option> -->
-          </select>
-        
-      </fieldset>
-    </section>
-  </div>
+    <div id="stupid_one">
+      <p>
+        <small>
+          <strong> Your Agent Id: </strong>
+          <span id="agent_id"> ${mephisto_agent_id} </span>
+        </small>
+      </p>
+    </div>
+
     
-  <p>
-      <small>
-        <strong> Your Agent Id: </strong>
-        <span id="agent_id"> ${mephisto_agent_id} </span>
-      </small>
-    </p>
-    <!-- End Content Body -->
+  </div>
+  <!-- End Content Body -->
   </div>
 </section>
 
@@ -186,12 +180,12 @@ ullamcorper mauris ultrices consectetur.
     $(".modal").modal("show");
   });
 
-  window.onload = function() {
+  window.onload = function () {
     alert('Page is loaded');
     document.getElementById("here").scrollIntoView(
-    {behavior: "smooth", block: "end", inline: "nearest"}
-  );
-};
+      { behavior: "smooth", block: "end", inline: "nearest" }
+    );
+  };
 
 
 
@@ -200,36 +194,55 @@ ullamcorper mauris ultrices consectetur.
 
 <style type="text/css">
   fieldset {
-    width: 45%;
+    width: 100%;
     padding: 10px;
     background: #dda7a7;
     border-radius: 5px;
     margin-bottom: 5px;
+    display: flex;
   }
 
+
+  #big_one {
+    width: 100%;
+    height: 375px;
+    display: flex;
+  }
 
 
   /* Split the screen in half */
   .split {
     height: 50%;
     width: 75%;
-  /*   position: fixed; */
+    /*   position: fixed; */
     z-index: 1;
-  /*   top: 0; */
-  /*   overflow-x: hidden; */
+    /*   top: 0; */
+    /*   overflow-x: hidden; */
     padding-top: 5px;
   }
 
+  .right_content {
+    width: 25%;
+    height: 100px;
+    background-color: green;
+    margin: 10px;
+  }
 
+  .left_content {
+    width: 75%;
+    height: 100px;
+    background-color: green;
+    margin: 10px;
+  }
 
   /* Control the left side */
   .up {
     top: 0;
     display: inline-block;
-    display:-moz-inline-stack;   
+    display: -moz-inline-stack;
     height: fit-content;
     background-color: powderblue;
-    border:1px;
+    border: 1px;
   }
 
   /* Control the right side */
@@ -242,8 +255,25 @@ ullamcorper mauris ultrices consectetur.
 
   /* If you want the content centered horizontally and vertically */
   .centered {
-  top: 50%;
-  left: 0%;
-  text-align: left;
+    top: 50%;
+    left: 0%;
+    text-align: left;
+  }
+
+  .split_right {
+    width: 100%;
+
+  }
+
+  #dynamic_one {
+    width: 100%;
+  }
+
+  #scrolled_one {
+    width: 100%;
+  }
+
+  #stupid_one{
+    display: flex;
   }
 </style>

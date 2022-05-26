@@ -95,14 +95,15 @@
     <div id="big_one" class="form_Qs">
       <div id="left" class="left_content">
         <div id="dynamic_one" class="split up centered">
-          <p><strong>Sentence 1: </strong>${original_sentence}</p>
-          <p><strong>Sentence 2: </strong>${anonymized_sentence}</p>
+          <p><strong>Sentence 1: </strong>${sentence1}</p>
+          <p><strong>Sentence 2: </strong>${sentence2}</p>
           <p>
             You can consult the context below if you think it will help you make a better decision.
           </p>
         </div>
         <div id="scrolled_one" class="split down centered">
-
+          <p>${passage}</p>
+          $choice
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
             pellentesque eleifend. Curabitur congue tortor in sapien aliquam
@@ -165,6 +166,7 @@
               <input name="answers" type="radio" id="meh" value=0.5> Slightly different <br>
               <!-- <input name="answers" type="radio" id="good" value="1 ${mephisto_agent_id}"> Identical -->
               <input name="answers" type="radio" id="good" value="1"> Identical
+              <input name ="anon_tech" value="${mephisto_agent_id}" hidden="true">
 
               <!-- <select class="form-control" name="rating">
               <option selected="selected" value="">(select one)</option>
@@ -173,6 +175,7 @@
               <option value="bad">Bad</option> 
             </select> -->
             </div>
+            <label name="Ameer" value="Ameer2 "> </label>
           </fieldset>
         </section>
       </div>
@@ -222,6 +225,9 @@
     display: flex;
   }
 
+  mark {
+    background-color: yellow;
+  }
 
   #big_one {
     width: 100%;

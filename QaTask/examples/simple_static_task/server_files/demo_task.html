@@ -2,6 +2,17 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<meta charset="utf-8">
+
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="css/form.main.css"> -->
+
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+
+  <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
 <!-- Modal -->
 <!-- MODAL -->
 
@@ -45,61 +56,45 @@
   ">
   <div class="row col-xs-13 col-md-13">
     <!-- Instructions -->
-    <full-instructions header="Classification Instructions">
-      <div class="panel panel-primary">
-        <div class="panel-heading"  data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true" aria-controls="collapseExample"> 
-          <strong> Instructions </strong>
+    <div class="page-content">
+      <div class="content-card">
+        <div class="info-card">
+    
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                  aria-expanded="false" aria-controls="collapseOne">
+                  <h5> <strong> Instructions </strong> </h5> 
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body" style="padding:10px;">
+                  <strong padding=10%>
+                    Hello, and thank you for participating in our study! <br>
+                    Please start by <a
+                      href=https://www.dropbox.com/s/0ue1djz8u0effgp/Consent_form_QAAnon_4_June_2021.pdf?dl=1>dowloading the
+                      conset form</a>
+                    and saving it for your future reference. By completing this task you are giving your conset to
+                    participate
+                    in this study.
+                  </strong>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div class="collapse" id="collapseExample">
-
-          <!-- <strong>THis is hidden</strong> -->
-        
-        <div class="panel-body" id="instructions">
-          <p>
-            <strong padding=10%>
-              Hello, and thank you for participating in our study! <br>
-              Please start by <a
-                href=https://www.dropbox.com/s/0ue1djz8u0effgp/Consent_form_QAAnon_4_June_2021.pdf?dl=1>dowloading the
-                conset form</a>
-              and saving it for your future reference. By completing this task you are giving your conset to participate
-              in this study.
-            </strong>
-          </p>
-
-          <ul>
-            <li>
-              brave soldier - I fight to defend my honor. I will keep my village
-              safe from any threat. It is my duty to protect my beloved wife.
-              &nbsp; -<em> good </em> (the character name and description fit
-              well)
-            </li>
-            <li>
-              noble - I am the daughter of a great warrior. My family name carries
-              a lot of weight where I live, so I'm accepted amongst nobility.
-              &nbsp; - <em>passable</em> (the character description is technically
-              not a noble, but accepted by nobles)
-            </li>
-            <li>
-              pig - I cannot stand being part of royalty. I long to adventure at
-              sea. My father would never allow it though. &nbsp;-
-              <em>bad</em> (the character is a pig, not royalty)
-            </li>
-          </ul>
-        </div>
-      </div> 
       </div>
-    </full-instructions>
+    </div>
     <!-- End Instructions -->
     <!-- Content Body -->
-    <div id="big_one" class="form_Qs">
+    <div id="big_one" class="form_Qs" style="padding: 3px;">
       <div id="left" class="left_content">
-        <div id="dynamic_one" class="split up centered">
+        <div id="dynamic_one" class="split up centered " style="border-radius: 5px;">
           <p><strong>Sentence 1: </strong>${sentence1}</p>
           <p><strong>Sentence 2: </strong>${sentence2}</p>
-          <p>
-            You can consult the context below if you think it will help you make a better decision.
-          </p>
+          <p>If you would like to look at the context to help you decide, you can see the <strong>passage below</strong>.</p> 
         </div>
         <div id="scrolled_one" class="split down centered">
           <p>${passage}</p>
@@ -159,14 +154,14 @@
       <div id="right" class="right_content">
         <section>
           <fieldset>
-            <div class="input-group split_right" name="rating">
+            <div class="input-group split_right" name="rating" style="display: block;">
               <label>How similar is the meaning of these two pieces of text?</label>
               <br>
               <input name="answers" type="radio" id="bad" value=0> Completely Different<br>
               <input name="answers" type="radio" id="meh" value=0.5> Slightly different <br>
               <!-- <input name="answers" type="radio" id="good" value="1 ${mephisto_agent_id}"> Identical -->
               <input name="answers" type="radio" id="good" value="1"> Identical
-              <input name ="anon_tech" value="${mephisto_agent_id}" hidden="true">
+              <input name="anon_tech" value="${mephisto_agent_id}" hidden="true">
 
               <!-- <select class="form-control" name="rating">
               <option selected="selected" value="">(select one)</option>
@@ -180,38 +175,30 @@
         </section>
       </div>
     </div>
-
-    <div id="stupid_one">
-      <p>
-        <small>
-          <strong> Your Agent Id: </strong>
-          <span id="agent_id"> ${mephisto_agent_id} </span>
-        </small>
-      </p>
-    </div>
-
-
   </div>
   <!-- End Content Body -->
   </div>
 </section>
 
-<script>
+<script async>
   $(function () {
     modal_body = $("#modal");
     $("#instructions").clone().appendTo(modal_body);
     $(".modal").modal("show");
   });
 
-  window.onload = function () {
-    /** alert('Page is loaded'); */
+  $(document).ready(function () {
     document.getElementById("here").scrollIntoView(
-      { behavior: "smooth", block: "end", inline: "nearest" }
-    );
-  };
+      /* { behavior: "smooth", inline: "nearest" } */
+      { behavior: "smooth" }
+    )
+  });
 
-
-
+  /** alert('Page is loaded');
+  document.getElementById("here").scrollIntoView(
+    { behavior: "smooth", block: "end", inline: "nearest" }
+  )
+  window.onload = scrollFunction; */
 
 </script>
 
@@ -264,10 +251,11 @@
   /* Control the left side */
   .up {
     top: 0;
+    padding: 10px;
     display: inline-block;
     display: -moz-inline-stack;
     height: fit-content;
-    background-color: powderblue;
+    background-color: #e7f1ff;
     border: 1px;
   }
 
@@ -302,4 +290,5 @@
   #stupid_one {
     display: flex;
   }
+
 </style>

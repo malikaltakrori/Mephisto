@@ -1,0 +1,122 @@
+html,
+body {
+    height: 100% !important;
+    width: 100% !important;
+    margin: 0px !important;
+    padding: 0px !important
+}
+
+body {
+    background-color: #fff
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px
+}
+
+.page .navbar {
+    background-color: #fff;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    height: 0%
+}
+
+.page .navbar .line {
+    height: 0%;
+    width: 100%;
+    background-color: #5e643f90;
+    margin: 0%
+}
+
+.page .navbar .logo {
+    background-color: #5e643f90;
+    padding: 5px;
+    display: flex;
+    margin: auto;
+    padding: auto;
+    margin-left: 2%;
+    height: 100%;
+    width: auto;
+    align-items: center
+}
+
+.page .navbar .logo h2 {
+    color: #fff;
+    margin-left: 15px;
+    margin-top: auto;
+    margin-bottom: auto
+}
+
+.page .navbar .logo img {
+    margin: auto;
+    height: 100%;
+    width: 40%;
+    padding-bottom: 5px
+}
+
+.page .page-content {
+    height: 100%;
+    background-color: #fff;
+    align-items: center
+}
+
+.page .page-content .content-card {
+    height: 100%;
+    width: 96%;
+    margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
+    display: flex;
+    flex-flow: column;
+    flex: 1 1 auto
+}
+
+.page .page-content .content-card .info-card .accordion-item {
+    background-color: rgba(68, 115, 255, .595)
+}
+
+.page .page-content .content-card .info-card .accordion-item .accordion-button {
+    background-color: rgba(255, 255, 255, .595)
+}
+
+.page .page-content .content-card .form-content {
+    display: flex;
+    flex: 1 1 auto
+}
+
+.page .page-content .content-card .form-content .left-content-col {
+    width: 75%
+}
+
+.page .page-content .content-card .form-content .left-content-col .sentence {
+    padding: 15px
+}
+
+.page .page-content .content-card .form-content .left-content-col .paragraph {
+    height: 250px;
+    overflow: scroll;
+    padding: 15px
+}
+
+.page .page-content .content-card .form-content .right-content-col {
+    width: 25%
+}
+
+.page .page-content .content-card .form-content .right-content-col .right-col-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
+    margin: 5px 10px 5px 10px
+}
+
+.page .page-content .content-card .form-content .right-content-col .right-col-card .right-col-choices {
+    display: flex;
+    flex-flow: column
+}
+
+.page .page-content .content-card .form-content .right-content-col .right-col-card label {
+    margin-bottom: 10px !important
+}

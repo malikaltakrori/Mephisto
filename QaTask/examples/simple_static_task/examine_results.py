@@ -23,9 +23,10 @@ def format_for_printing_data(data):
         f"Worker: {worker_name}\nUnit: {data['unit_id']}\n"
         f"Duration: {int(duration)}\nStatus: {data['status']}\n"
     )
-
+    
     inputs = contents["inputs"]
-    inputs_string = f"Origin: {inputs['original_sentence']}\nAnony.: {inputs['anonymized_sentence']}\n"
+    print(inputs)
+    inputs_string = f"Origin: {inputs['sentence1']}\nAnony.: {inputs['sentence2']}\n"
 
     outputs = contents["outputs"]
     output_string = f"   Rating: {outputs['answers']}\n"

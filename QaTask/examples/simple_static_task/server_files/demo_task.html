@@ -176,13 +176,13 @@
             
             
             <div class="btn-group" data-toggle="buttons">
-              <label class="btn btn-primary input-field big-font">
+              <label class="btn btn-primary button2 input-field big-font">
                 <input type="radio" name="answers" value="0" id="bad"> Option 1
               </label>
-              <label class="btn btn-primary input-field big-font">
+              <label class="btn btn-primary button2 input-field big-font">
                 <input type="radio" name="answers" value="0.5" id="meh"> Option 2
               </label>
-              <label class="btn btn-primary input-field big-font">
+              <label class="btn btn-primary button2 input-field big-font">
                 <input type="radio" name="answers" value="1" id="good"> Option 3
               </label>
               <input name ="anon_tech" value="${mephisto_agent_id}" hidden="true">
@@ -233,6 +233,17 @@
   .panel-heading {
       position: relative;
   }
+  
+  .button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
 
   .panel-heading[data-toggle="collapse"]:after {
       font-family: 'Glyphicons Halflings';

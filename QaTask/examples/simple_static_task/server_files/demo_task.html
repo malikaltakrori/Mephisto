@@ -164,12 +164,31 @@
         <section>
           <fieldset>
             <div class="input-group split_right big-font" name="rating" >
+
+
+               
               <label>How similar is the meaning of these two pieces of text?</label>
               <br>
-              <input name="answers" type="radio" id="bad" value=0> Completely Different<br>
+<!--              <input name="answers" type="radio" id="bad" value=0> Completely Different<br>
               <input name="answers" type="radio" id="meh" value=0.5> Slightly different <br>
               <input name="answers" type="radio" id="good" value="1"> Identical
+            -->
+            
+            
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-primary input-field big-font">
+                <input type="radio" name="answers" value="0" id="bad"> Option 1
+              </label>
+              <label class="btn btn-primary input-field big-font">
+                <input type="radio" name="answers" value="0.5" id="meh"> Option 2
+              </label>
+              <label class="btn btn-primary input-field big-font">
+                <input type="radio" name="answers" value="1" id="good"> Option 3
+              </label>
               <input name ="anon_tech" value="${mephisto_agent_id}" hidden="true">
+            </div>
+
+
 
 
             </div> 
@@ -254,13 +273,23 @@
   fieldset {
     width: 100%;
     padding: 10px;
-    background: #2798cf80;
+    background: #2798cf57;
     border-radius: 5px;
     margin-bottom: 5px;
     display: flex;
   }
   .panel-heading {
     background-color: #2a4b6d;
+  }
+
+  .right_content .btn-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .right_content .btn-group .input-field {
+    margin: 5px 0px;
+    border-radius: 5px !important;
   }
 
 
@@ -334,11 +363,11 @@
   #dynamic_one {
     width: 100%;
     border-radius: 5px;
-    background-color: #2798cf80;
+    background-color: #2798cf57;
   }
 
   /* .input-group {
-    background-color: #2798cf80;
+    background-color: #2798cf57;
   } */
 
   #scrolled_one {

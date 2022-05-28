@@ -44,7 +44,7 @@
     font-family: Verdana, Geneva, sans-serif;
     font-size: 0.9em;
   ">
-  <div class="row col-md-16 col-md-16">
+  <div class="row col-md-28 col-md-28">
     <!-- Instructions -->
     
       <div class="panel panel-primary" style="margin: 8px;">
@@ -98,7 +98,7 @@
     <!-- Content Body -->
     <div id="big_one" class="form_Qs">
       <div id="left" class="left_content" >
-        <div id="dynamic_one" class="split up centered" style="padding-left: 10px;">
+        <div id="dynamic_one" class="split up centered big-font" style="padding-left: 10px;">
           <p><strong>Sentence 1: </strong>${sentence1}</p>
           <p><strong>Sentence 2: </strong>${sentence2}</p>
           <p>
@@ -139,7 +139,7 @@
             augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
             sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
             ullamcorper mauris ultrices consectetur.
-            <span id='here'><mark> Some extra text Some extra text Some extra text Some extra text Some extra text Some
+            <span id='here'><mark class="big-font"> Some extra text Some extra text Some extra text Some extra text Some extra text Some
                 extra text Some extra text Some extra text Some extra text </mark></span>
           </p>
           <p>
@@ -163,7 +163,7 @@
       <div id="right" class="right_content" style="display: block">
         <section>
           <fieldset>
-            <div class="input-group split_right" name="rating" >
+            <div class="input-group split_right big-font" name="rating" >
               <label>How similar is the meaning of these two pieces of text?</label>
               <br>
               <input name="answers" type="radio" id="bad" value=0> Completely Different<br>
@@ -234,6 +234,10 @@
       transform: rotate(-90deg);
   }
 
+  .panel-heading strong {
+    font-size: 18px;
+  }
+
   .panel-heading[data-toggle="collapse"].collapsed:after {
       /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
       -webkit-transform: rotate(90deg);
@@ -250,11 +254,16 @@
   fieldset {
     width: 100%;
     padding: 10px;
-    background: hsl(30, 100%, 75%);
+    background: #2798cf80;
     border-radius: 5px;
     margin-bottom: 5px;
     display: flex;
   }
+  .panel-heading {
+    background-color: #2a4b6d;
+  }
+
+
 
   mark {
     background-color: yellow;
@@ -324,7 +333,13 @@
 
   #dynamic_one {
     width: 100%;
+    border-radius: 5px;
+    background-color: #2798cf80;
   }
+
+  /* .input-group {
+    background-color: #2798cf80;
+  } */
 
   #scrolled_one {
     width: 100%;
@@ -333,4 +348,9 @@
   #stupid_one {
     display: flex;
   }
+
+  .big-font {
+    font-size: 15px;
+  }
+
 </style>

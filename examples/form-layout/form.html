@@ -3,16 +3,14 @@
 
 <head>
   <meta charset="utf-8">
-
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="css/form.main.css">
   <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
-
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  
   <link rel="stylesheet" href="css/bootstrap.min.css">
-
 
   <script>
     function scrollFunction() {
@@ -21,6 +19,95 @@
     }
     window.onload = scrollFunction;
   </script>
+
+  <!-- <style type="text/css">
+    fieldset {
+      width: 100%;
+      padding: 10px;
+      background: #fbb36b;
+      border-radius: 5px;
+      margin-bottom: 5px;
+      display: flex;
+    }
+  
+    mark {
+      background-color: yellow;
+    }
+  
+    #big_one {
+      width: 100%;
+      height: 375px;
+      display: flex;
+    }
+  
+  
+    /* Split the screen in half */
+    .split {
+      height: 50%;
+      width: 75%;
+      /*   position: fixed; */
+      z-index: 1;
+      /*   top: 0; */
+      /*   overflow-x: hidden; */
+      padding-top: 5px;
+    }
+  
+    .right_content {
+      width: 25%;
+      height: 100px;
+      /*background-color: green; */
+      margin: 10px;
+    }
+  
+    .left_content {
+      width: 75%;
+      height: 100px;
+      /*background-color: green; */
+      margin: 10px;
+    }
+  
+    /* Control the left side */
+    .up {
+      top: 0;
+      display: inline-block;
+      display: -moz-inline-stack;
+      height: fit-content;
+      background-color: powderblue;
+      border: 1px;
+    }
+  
+    /* Control the right side */
+    .down {
+      bottom: 0;
+      background-color: white;
+      overflow: scroll;
+      height: 200px;
+    }
+  
+    /* If you want the content centered horizontally and vertically */
+    .centered {
+      top: 50%;
+      left: 0%;
+      text-align: left;
+    }
+  
+    .split_right {
+      width: 100%;
+  
+    }
+  
+    #dynamic_one {
+      width: 100%;
+    }
+  
+    #scrolled_one {
+      width: 100%;
+    }
+  
+    #stupid_one {
+      display: flex;
+    }
+  </style> -->
 </head>
 
 <body>
@@ -45,19 +132,20 @@
               <h2 class="accordion-header" id="headingOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
                   aria-expanded="true" aria-controls="collapseOne">
-                  <h5>
-                    Accordion Item #1
-                  </h5>
+                  <h5> <strong> Instructions </strong> </h5>
                 </button>
               </h2>
               <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                 data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse
-                  plugin adds the appropriate classes that we use to style each element. These classes control the
-                  overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this
-                  with custom CSS or overriding our default variables. It's also worth noting that just about any HTML
-                  can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  <strong padding=10%>
+                    Hello, and thank you for participating in our study! <br>
+                    Please start by <a
+                      href=https://www.dropbox.com/s/0ue1djz8u0effgp/Consent_form_QAAnon_4_June_2021.pdf?dl=1>dowloading the
+                      conset form</a>
+                    and saving it for your future reference. By completing this task you are giving your conset to participate
+                    in this study.
+                  </strong>
                 </div>
               </div>
             </div>
@@ -77,23 +165,67 @@
           <div class="left-content-col">
             <div class="sentences">
               <div class="sentence sentence-first m-2 rounded border border-dark">
-                This is the first item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow.
-              </div>
-              <div  class="sentence sentence-second m-2 rounded border border-dark">
-                This is the first item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow.
-              </div>
+                <p><strong>Sentence 1: </strong>${sentence1}</p>
+                <p><strong>Sentence 2: </strong>${sentence2}</p>
+                <p>
+                  You can consult the context below if you think it will help you make a better decision.
+                </p>
+              </div>              
             </div>
 
             <div class="paragraph m-2 rounded border border-dark">
-              This is the first item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow.
-              This is the first item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow.
-              This is the first item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow.
-              This is the first item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow.
-              This is the first item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow.
-              This is the first item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow.
-              <div id="rr">
-                asd
-              </div>
+              <p>${passage}</p>
+          $choice
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
+            pellentesque eleifend. Curabitur congue tortor in sapien aliquam
+            hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
+            augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
+            sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
+            ullamcorper mauris ultrices consectetur.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
+            pellentesque eleifend. Curabitur congue tortor in sapien aliquam
+            hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
+            augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
+            sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
+            ullamcorper mauris ultrices consectetur.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
+            pellentesque eleifend. Curabitur congue tortor in sapien aliquam
+            hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
+            augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
+            sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
+            ullamcorper mauris ultrices consectetur.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
+            pellentesque eleifend. Curabitur congue tortor in sapien aliquam
+            hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
+            augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
+            sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
+            ullamcorper mauris ultrices consectetur.
+            <span id='here'><mark> Some extra text Some extra text Some extra text Some extra text Some extra text Some
+                extra text Some extra text Some extra text Some extra text </mark></span>
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
+            pellentesque eleifend. Curabitur congue tortor in sapien aliquam
+            hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
+            augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
+            sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
+            ullamcorper mauris ultrices consectetur.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
+            pellentesque eleifend. Curabitur congue tortor in sapien aliquam
+            hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
+            augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
+            sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
+            ullamcorper mauris ultrices consectetur.
+          </p>
             </div>
 
           </div>
@@ -108,23 +240,31 @@
 
             <div class="right-col-card rounded border border-primary">
               <div class="m-4 right-col-description">
-                <h3>
-                  Say Hi
-                </h3>
+                <h4>
+                  <label>How similar is the meaning of these two pieces of text?</label>
+                </h4>
               </div>
 
 
               <div class="m-4 right-col-choices">
-                <!-- <div class="btn-group"> -->
+                <!-- <label>How similar is the meaning of these two pieces of text?</label>
+              <br>
+              <input class="btn btn-outline-primary" name="answers" type="radio" id="bad"  value=0 autocomplete="off"> Completely Different<br>
+              <label class="btn btn-outline-primary" for="radio1">Radio 1</label>
+              <input class="btn btn-outline-primary" name="answers" type="radio" id="meh"  value=0.5 autocomplete="off"> Slightly different <br>
+              <input class="btn btn-outline-primary" name="answers" type="radio" id="good" value=1 autocomplete="off"> Identical <br>
+              <input class="btn btn-outline-primary" name ="anon_tech" value="${mephisto_agent_id}" hidden="true">
+              -->
+              <div class="btn-group"> 
                 <input type="radio" class="btn-check" name="options" id="radio1" autocomplete="off">
-                <label class="btn btn-outline-primary" for="radio1">Radio 1</label>
+                <label class="btn btn-outline-primary" for="radio1">Completely Different</label>
 
                 <input type="radio" class="btn-check" name="options" id="radio2" autocomplete="off">
-                <label class="btn btn-outline-primary" for="radio2">Radio 2</label>
+                <label class="btn btn-outline-primary" for="radio2">Slightly different</label>
 
                 <input type="radio" class="btn-check" name="options" id="radio3" autocomplete="off">
-                <label class="btn btn-outline-primary" for="radio3">Radio 3</label>
-                <!-- </div> -->
+                <label class="btn btn-outline-primary" for="radio3">Identical</label> 
+                </div>
               </div>
             </div>
 

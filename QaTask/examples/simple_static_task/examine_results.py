@@ -29,14 +29,22 @@ def format_for_printing_data(data):
     inputs_string = f"Origin: {inputs['sentence1']}\nAnony.: {inputs['sentence2']}\n"
 
     outputs = contents["outputs"]
-    output_string = f"   Rating: {outputs['answers']}\n"
-    found_files = outputs.get("files")
-    if found_files is not None:
-        file_dir = Unit.get(db, data["unit_id"]).get_assigned_agent().get_data_dir()
-        output_string += f"   Files: {found_files}\n"
-        output_string += f"   File directory {file_dir}\n"
+    output_string = f"   Answer: {outputs['answers']}\n"
+    
+    if inputs['correct'] == outputs['answers']:
+        
+        output_string += "Correct: True\n"
     else:
-        output_string += f"   Files: No files attached\n"
+        output_string += "Correct: False\n"
+
+        
+    # found_files = outputs.get("files")
+    # if found_files is not None:
+    #     file_dir = Unit.get(db, data["unit_id"]).get_assigned_agent().get_data_dir()
+    #     output_string += f"   Files: {found_files}\n"
+    #     output_string += f"   File directory {file_dir}\n"
+    # else:
+    #     output_string += f"   Files: No files attached\n"
     return f"-------------------\n{metadata_string}{inputs_string}{output_string}"
 
 

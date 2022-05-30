@@ -1,0 +1,384 @@
+<!-- Bootstrap v3.0.3 -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Modal -->
+<!-- MODAL -->
+
+<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade in" id="exampleModal" role="dialog"
+  tabindex="-1">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <strong> &nbsp; Instructions</strong>
+        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+          <span aria-hidden="true"> &times; </span>
+        </button>
+      </div>
+
+      <div class="modal-body" id="modal">&nbsp;</div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-dismiss="modal" type="button">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Content -->
+<!-- <p>
+
+  <div  data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="true" aria-controls="collapseExample1"> 
+    hi
+  </div>
+</p>
+<div class="collapse" id="collapseExample1">
+    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+</div> -->
+
+<section class="container" id="Other" style="
+    margin-bottom: 15px;
+    padding: 10px;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 0.9em;
+  ">
+  <div class="row col-md-28 col-md-28">
+    <!-- Instructions -->
+    
+      <div class="panel panel-primary" style="margin: 8px;">
+        <div class="panel-heading" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true"
+          aria-controls="collapseExample">
+          <strong> Instructions </strong>
+        </div>
+      
+        <div class="collapse" id="collapseExample">
+          <div class="panel-body" id="instructions">
+            <p>
+              <strong padding=10%>
+                Hello, and thank you for participating in our study! <br>
+                Please start by <a
+                  href=https://www.dropbox.com/s/0ue1djz8u0effgp/Consent_form_QAAnon_4_June_2021.pdf?dl=1>dowloading the
+                  conset form</a>
+                and saving it for your future reference. By completing this task you are giving your conset to participate
+                in this study.
+              </strong>
+            </p>
+            <div style="display: block;">
+              <p> * Example one </p>
+              <p> * Example one </p>
+              <p> * Example one </p>
+            </div>
+      
+            <!-- <ul style="display: block">
+                  <li>
+                    brave soldier - I fight to defend my honor. I will keep my village
+                    safe from any threat. It is my duty to protect my beloved wife.
+                    -<em> good </em> (the character name and description fit
+                    well)
+                  </li>
+                  <li>
+                    noble - I am the daughter of a great warrior. My family name carries
+                    a lot of weight where I live, so I'm accepted amongst nobility.
+                    &nbsp; - <em>passable</em> (the character description is technically
+                    not a noble, but accepted by nobles)
+                  </li>
+                  <li>
+                    pig - I cannot stand being part of royalty. I long to adventure at
+                    sea. My father would never allow it though. &nbsp;-
+                    <em>bad</em> (the character is a pig, not royalty)
+                  </li>
+                </ul> -->
+          </div>
+        </div>
+      </div>
+    
+    <!-- End Instructions -->
+    <!-- Content Body -->
+    <div id="big_one" class="form_Qs">
+      <div id="left" class="left_content" >
+        <div id="dynamic_one" class="split up centered big-font" style="padding-left: 10px;">
+          <p><strong>Sentence 1: </strong>${sentence1}</p>
+          <p><strong>Sentence 2: </strong>${sentence2}</p>
+          <p>
+            You can consult the context below if you think it will help you make a better decision.
+          </p>
+        </div>
+        <div id="scrolled_one" class="split down centered" style="padding-left: 10px;">
+          <p>${passage}</p>
+          ${correct_choice}
+          <!-- <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
+            pellentesque eleifend. Curabitur congue tortor in sapien aliquam
+            hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
+            augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
+            sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
+            ullamcorper mauris ultrices consectetur.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
+            pellentesque eleifend. Curabitur congue tortor in sapien aliquam
+            hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
+            augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
+            sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
+            ullamcorper mauris ultrices consectetur.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
+            pellentesque eleifend. Curabitur congue tortor in sapien aliquam
+            hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
+            augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
+            sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
+            ullamcorper mauris ultrices consectetur.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
+            pellentesque eleifend. Curabitur congue tortor in sapien aliquam
+            hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
+            augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
+            sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
+            ullamcorper mauris ultrices consectetur.
+            <span id='here'><mark class="big-font"> Some extra text Some extra text Some extra text Some extra text Some extra text Some
+                extra text Some extra text Some extra text Some extra text </mark></span>
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
+            pellentesque eleifend. Curabitur congue tortor in sapien aliquam
+            hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
+            augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
+            sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
+            ullamcorper mauris ultrices consectetur.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
+            pellentesque eleifend. Curabitur congue tortor in sapien aliquam
+            hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
+            augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
+            sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
+            ullamcorper mauris ultrices consectetur.
+          </p> -->
+        </div>
+      </div>
+      <div id="right" class="right_content" style="display: block">
+        <section>
+          <fieldset>
+            <div class="input-group split_right big-font" name="rating">
+              <label>How similar is the meaning of Sentence 1 and Sentence 2?</label>
+              <br>
+          
+              <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary button2 input-field big-font">
+                  <input type="radio" name="answers" value="0" id="bad"> Completely different
+                </label>
+                <label class="btn btn-primary button2 input-field big-font">
+                  <input type="radio" name="answers" value="0.5" id="S2"> Slightly different
+                </label>
+                <label class="btn btn-primary button2 input-field big-font">
+                  <input type="radio" name="answers" value="1" id="good"> Exactly the same
+                </label>
+              </div>          
+            </div>
+          
+          </fieldset>
+        </section>
+      </div>
+    </div>
+
+    <!--
+    <div id="stupid_one">
+      <p>
+        <small>
+          <strong> Your Agent Id: </strong>
+          <span id="agent_id"> ${mephisto_agent_id} </span>
+        </small>
+      </p>
+    </div>
+    -->
+
+  </div>
+  <!-- End Content Body -->
+
+</section>
+
+<script async>
+  $(function () {
+    modal_body = $("#modal");
+    $("#instructions").clone().appendTo(modal_body);
+    $(".modal").modal("show");
+  });
+
+  $(document).ready(function(){
+    document.getElementById("here").scrollIntoView(
+      /* { behavior: "smooth", inline: "nearest" } */
+      { behavior: "smooth"}
+  )});
+
+  
+</script>
+
+<style>
+  .panel-heading {
+      position: relative;
+  }
+  
+  .button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+  .panel-heading[data-toggle="collapse"]:after {
+      font-family: 'Glyphicons Halflings';
+      content: "\e072";
+      /* "play" icon */
+      position: absolute;
+      color: #8fabff; /*#b0c5d8*/
+      font-size: 18px;
+      line-height: 22px;
+      right: 20px;
+      top: calc(50% - 10px);
+
+      /* rotate "play" icon from > (right arrow) to down arrow */
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      -o-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+  }
+
+  .panel-heading strong {
+    font-size: 18px;
+  }
+
+  .panel-heading[data-toggle="collapse"].collapsed:after {
+      /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      transform: rotate(90deg);
+  }
+</style>
+
+
+
+<style type="text/css">
+  fieldset {
+    width: 100%;
+    padding: 10px;
+    background: #2798cf57;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    display: flex;
+  }
+  .panel-heading {
+    background-color: #2a4b6d;
+  }
+
+  .right_content .btn-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .right_content .btn-group .input-field {
+    margin: 5px 0px;
+    border-radius: 5px !important;
+  }
+
+
+
+  mark {
+    background-color: yellow;
+  }
+
+  #big_one {
+    width: 100%;
+    height: 375px;
+    display: flex;
+  }
+
+
+  /* Split the screen in half */
+  .split {
+    height: 50%;
+    width: 75%;
+    /*   position: fixed; */
+    z-index: 1;
+    /*   top: 0; */
+    /*   overflow-x: hidden; */
+    padding-top: 5px;
+  }
+
+  .right_content {
+    width: 25%;
+    height: 100px;
+    /*background-color: green; */
+    margin: 10px;
+  }
+
+  .left_content {
+    width: 75%;
+    height: 100px;
+    /*background-color: green; */
+    margin: 10px;
+  }
+
+  /* Control the left side */
+  .up {
+    top: 0;
+    display: inline-block;
+    display: -moz-inline-stack;
+    height: fit-content;
+    background-color: #b0c5d8;
+    border: 1px;
+  }
+
+  /* Control the right side */
+  .down {
+    bottom: 0;
+    background-color: white;
+    overflow: scroll;
+    height: 200px;
+  }
+
+  /* If you want the content centered horizontally and vertically */
+  .centered {
+    top: 50%;
+    left: 0%;
+    text-align: left;
+  }
+
+  .split_right {
+    width: 100%;
+
+  }
+
+  #dynamic_one {
+    width: 100%;
+    border-radius: 5px;
+    background-color: #2798cf57;
+  }
+
+  /* .input-group {
+    background-color: #2798cf57;
+  } */
+
+  #scrolled_one {
+    width: 100%;
+  }
+
+  #stupid_one {
+    display: flex;
+  }
+
+  .big-font {
+    font-size: 15px;
+  }
+
+</style>

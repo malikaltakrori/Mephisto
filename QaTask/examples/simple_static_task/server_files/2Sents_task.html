@@ -44,17 +44,17 @@
     font-family: Verdana, Geneva, sans-serif;
     font-size: 0.9em;
   ">
-  <div class="row col-md-28 col-md-28">
+  <div class="row col-md-28 col-md-28" style="overflow: hidden;">
     <!-- Instructions -->
     
       <div class="panel panel-primary" style="margin: 8px;">
         <div class="panel-heading" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true"
-          aria-controls="collapseExample">
-          <strong> Instructions </strong>
+          aria-controls="collapseExample"style="background-color: #2a4b6d; border-color:#2a4b6d;">
+          <strong style="color: wheat;"> Instructions </strong>
         </div>
       
         <div class="collapse" id="collapseExample">
-          <div class="panel-body" id="instructions">
+          <div class="panel-body" id="instructions" style="font-size: 16px;">
             <p>
               <strong padding=10%>
                 Hello, and thank you for participating in our study! <br>
@@ -65,7 +65,7 @@
                 in this study.
               </strong>
             </p>
-            <div style="display: block;" style="font-size: 14;">
+            <div style="display: block;" style="font-size: 20px;">
               <p> * Example one </p>
               <p> * Example one </p>
               <p> * Example one </p>
@@ -99,18 +99,20 @@
     <div id="big_one" class="form_Qs">
       <div id="left" class="left_content" >
         <div id="dynamic_one" class="split up centered big-font" style="padding: 10px; background-color: #2a4b6d; color:white;" >
-          <p><strong>Original: ${original}</strong></p>          
+          <p><strong style="color: wheat;">Original: ${original}</strong></p>          
         </div>
         <div id="dynamic_one" class="split up centered big-font" style="padding-left: 10px;">
           <p><strong>Sentence 1: </strong>${sentence1}</p>
           <p><strong>Sentence 2: </strong>${sentence2}</p>
+        </div>  
+        <div id="dynamic_one" class="split up centered big-font" style="padding-left: 10px; border-color:aqua; border-radius:20px;">  
           <p>
             You can consult the context below if you think it will help you make a better decision.
           </p>
         </div>
         <div id="scrolled_one" class="split down centered" style="padding-left: 10px;">
-          <p>${passage}</p>
-          ${correct_choice}          
+          <p>${passage}</p>          
+          <input type="hidden" id="choice" name="choice" value=${correct_choice}>    
         </div>
       </div>
       <div id="right" class="right_content" style="display: block">
@@ -122,7 +124,7 @@
           
               <div class="btn-group" data-toggle="buttons">
                 <label class="btn btn-primary button2 input-field big-font">
-                  <input type="radio" name="answers" value="1" id="S1"> Sentence 1</label>
+                  <input type="radio" name="answers" value="1" id="S1" required="required"> Sentence 1</label>
                 <label class="btn btn-primary button2 input-field big-font">
                   <input type="radio" name="answers" value="2" id="S2"> Sentence 2</label>                
               </div>          
@@ -130,6 +132,7 @@
           
           </fieldset>
         </section>
+        
       </div>
     </div>
 
@@ -186,7 +189,7 @@
       content: "\e072";
       /* "play" icon */
       position: absolute;
-      color: #8fabff; /*#b0c5d8*/
+      background-color:#2a4b6d; /* #8fabff; /*#b0c5d8*/
       font-size: 18px;
       line-height: 22px;
       right: 20px;
@@ -226,6 +229,7 @@
     display: flex;
   }
   .panel-heading {
+    /* background-color: #2a4b6d; */
     background-color: #2a4b6d;
   }
 
@@ -247,7 +251,7 @@
 
   #big_one {
     width: 100%;
-    height: 375px;
+    height: 480px;
     display: flex;
   }
 

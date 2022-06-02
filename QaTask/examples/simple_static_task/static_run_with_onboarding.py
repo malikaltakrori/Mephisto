@@ -23,7 +23,7 @@ CORRECT_ANSWER = "apple"
 @dataclass
 class OnboardingConfig(build_default_task_config("onboarding_example")):  # type: ignore
     correct_answer: str = CORRECT_ANSWER
-
+    # some work be done
 
 @task_script(config=OnboardingConfig)
 def main(operator: Operator, cfg: DictConfig) -> None:

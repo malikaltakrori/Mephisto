@@ -10,7 +10,8 @@
             "request": "launch",
             "program": "/Users/malik/myCode/Mephisto/QaTask/examples/simple_static_task/static_test_script.py",
             "console": "integratedTerminal",
-            "justMyCode": true
+            "justMyCode": true,
+            "args": ["conf=2sents", "mephisto.architect.port=1234"]
         },
         {
             "name": "task my conf",
@@ -35,7 +36,8 @@
             "request": "launch",
             "program": "${workspaceFolder}/QaTask/examples/simple_static_task/static_run_with_onboarding.py",
             "console": "integratedTerminal",
-            "justMyCode": true
+            "justMyCode": true,
+            "args": ["mephisto.architect.port=1234"]
         }, 
     ]
 }

@@ -50,8 +50,9 @@
     
       <div class="panel panel-primary" style="margin: 8px;">
         <div class="panel-heading" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true"
-        aria-controls="collapseExample"style="background-color: #2a4b6d; border-color:#2a4b6d;">
-        <strong style="color: white;"> Instructions </strong> <p id="note">(click to expand/collapse)</p>
+        aria-controls="collapseExample"style="background-color: #2a4b6d; border-color:#2a4b6d;" onclick="onCollapse()">
+        <strong style="color: white;"> Instructions </strong> 
+        <div id="collapse-text">[Click to Expand]</div>
       </div>
     
       <div class="collapse" id="collapseExample">
@@ -177,13 +178,13 @@
               <br>
           
               <div class="btn-group" data-toggle="buttons">
-                <label class="btn btn-primary button2 input-field big-font">
+                <label class="btn btn-primary button2 input-field big-font choices">
                   <input type="radio" name="answers" value="1" id="good">The <strong>content is preserved</strong>. The<br>changes did not affect the meaning
                 </label>
-                <label class="btn btn-primary button2 input-field big-font">
+                <label class="btn btn-primary button2 input-field big-font choices">
                   <input type="radio" name="answers" value="0.5" id="nosnos">I understood <strong>most of the original<br>meaning</strong> despite the changes
                 </label>
-                <label class="btn btn-primary button2 input-field big-font">
+                <label class="btn btn-primary button2 input-field big-font choices">
                   <input type="radio" name="answers" value="0" id="bad">The meaning is <strong>very different</strong><br>because of the changes
                 </label>
               </div>          
@@ -223,6 +224,14 @@
       { behavior: "smooth"}
   )});
 
+
+  function onCollapse() {
+    if (document.getElementById("collapse-text").innerHTML == "[Click to Expand]") {
+      document.getElementById("collapse-text").innerHTML = "[Click to Collapse]"
+    } else {
+      document.getElementById("collapse-text").innerHTML = "[Click to Expand]"
+    }
+  }
   
 </script>
 
@@ -242,6 +251,10 @@ border: 2px solid #008CBA;
   background-color: #008CBA;
   color: white;
 }
+
+  #collapse-text {
+    padding-right: 40px;
+  }
 
   .panel-heading[data-toggle="collapse"]:after {
       font-family: 'Glyphicons Halflings';
@@ -288,6 +301,9 @@ border: 2px solid #008CBA;
   }
   .panel-heading {
     background-color: #2a4b6d;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
   }
 
   .right_content .btn-group {
@@ -389,6 +405,12 @@ border: 2px solid #008CBA;
   .big-font {
     font-size: 15px;
   }
+
+  .choices{
+    white-space: normal;
+    word-break: break-all;
+  }
+
 
 
 

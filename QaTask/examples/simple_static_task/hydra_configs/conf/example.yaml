@@ -5,11 +5,11 @@ defaults:
   - /mephisto/provider: mock
 mephisto:
   blueprint:
-    data_csv: ${task_dir}/data.csv
-    task_source: ${task_dir}/server_files/demo_task.html
-    preview_source: ${task_dir}/server_files/demo_preview.html
-    extra_source_dir: ${task_dir}/server_files/extra_refs
-    units_per_assignment: 2
+    data_csv: ${task_dir}/theData/realData_W3.csv
+    task_source: ${task_dir}/server_files/actual_task.html
+    # preview_source: ${task_dir}/server_files/demo_preview.html
+    # extra_source_dir: ${task_dir}/server_files/extra_refs
+    units_per_assignment: 1
   task:
     task_name: testing-data
     task_title: "Test static task"

@@ -7,8 +7,8 @@
 
 <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade in" id="exampleModal" role="dialog"
   tabindex="-1">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
+  <div class="modal-dialog" role="document" style="width: fit-content;">
+    <div class="modal-content" style="width: 95%;">
       <div class="modal-header">
         <strong> &nbsp; Instructions</strong>
         <button aria-label="Close" class="close" data-dismiss="modal" type="button">
@@ -43,54 +43,111 @@
     padding: 10px;
     font-family: Verdana, Geneva, sans-serif;
     font-size: 0.9em;
+    width:100%;
   ">
   <div class="row col-md-28 col-md-28">
     <!-- Instructions -->
     
       <div class="panel panel-primary" style="margin: 8px;">
         <div class="panel-heading" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true"
-          aria-controls="collapseExample">
-          <strong> Instructions </strong>
-        </div>
-      
-        <div class="collapse" id="collapseExample">
-          <div class="panel-body" id="instructions">
+        aria-controls="collapseExample"style="background-color: #2a4b6d; border-color:#2a4b6d;">
+        <strong style="color: white;"> Instructions </strong> <p id="note">(click to expand/collapse)</p>
+      </div>
+    
+      <div class="collapse" id="collapseExample">
+        <div class="panel-body" id="instructions" style="font-size: 16px;">
             <p>
               <strong padding=10%>
                 Hello, and thank you for participating in our study! <br>
-                First, please start by <a
+                Please start by <a
                   href=https://www.dropbox.com/s/0ue1djz8u0effgp/Consent_form_QAAnon_4_June_2021.pdf?dl=1>dowloading the
-                  conset form</a>
-                and saving it for your future reference. By completing this task you are giving your conset to participate
-                in this study.
+                  consent form</a> and saving it for your future reference. By completing this task you are giving your consent to participate
+                in this study. 
               </strong>
             </p>
-            <div style="display: block;">
-              <p></p>
-              <p> * Example one </p>
-              <p> * Example one </p>
-              <p> * Example one </p>
+            <div style="display: block;" style="font-size: 14;">
+              <p>In the table below, we provide some examples that we rated for your reference. <br>
+                <strong>The Rating</strong> that we used is: 1 for preserving the meaning as it is. 0.5 for partially preserving the meaning (or preserving some of it), 
+                and 0 if the meaning changes completely, or a key fact (from your perspective) is changed.
+              </p>
+              <table>
+                <tr style="border-bottom: 2px solid black;">
+                  <th>No.</th>
+                  <th>Original</th>
+                  <th>Modified</th>
+                  <th>Our Rating (0, 0.5, 1)</th>
+                </tr>
+                <tr>
+                  <td>1.</td>
+                  <td>Often an organization's decision to cease operations in a country has more to do with a lack of financial support than the successful completion of their programming.</td>
+                  <td>Often <strong>A</strong>n <strong>watchdog</strong>'s decision to <strong>withhold</strong> operations in a <strong>globe</strong> has more to agree with a lack of <strong>biz wish</strong> than the successful <strong>initiation</strong> of their <strong>TV</strong>.</td>
+                  <td>0</td>
+                </tr>
+                <tr style="border-bottom: 2px solid black;">
+                  <td></td>
+                  <td colspan="3">
+                  <strong>Explanaition:</strong> The changes broke the sentence meaning because the words in <strong>bold</strong> do not give the same meaning.
+                </td>
+                </tr>
+                <!-- ---------------  -->
+                <tr>
+                  <td>2.</td>                              
+                  <td>MHUs are limited in the number of services they can provide and the frequency at which they are available to any one community.	</td>
+                  <td>MHUs are limited in the number of services they would give and the frequency at which they are <strong>saver</strong> to any one community.</td>
+                  <td>0.5</td>
+                </tr>
+                <tr style="border-bottom: 2px solid black;">
+                  <td></td>
+                  <td colspan="3">
+                  <strong>Explanaition:</strong> Here, it is not that only one word was changed, but rather than the general meaning can still be understood.
+                  </td>
+                </tr>
+                <!-- ---------------  --><!-- ---------------  -->
+                <tr>
+                  <td>3.</td>                              
+                  <td>Two important US officials in Luanda, Robert W. Hultslander, the CIA station chief, and Tom Killoran, the American Consul General, agreed that the MPLA were the most qualified of the groups to govern and sought peaceful relations with Washington.</td>
+                  <td>Two <strong>main</strong> <strong>U.S.</strong> officials in Luanda, Robert W. Hultslander, the CIA <strong>head of state</strong>, and Tom Killoran, the U.S. <strong>consulate</strong>, <strong>accepted</strong> that the most qualified MPLA groups to govern and <strong>seek peaceful</strong> relations with Washington.</td>
+                  <td>0</td>
+                </tr>
+                <tr style="border-bottom: 2px solid black;">
+                  <td></td>
+                  <td colspan="3">
+                  <strong>Explanaition:</strong> Here, it is not that only one word was changed, but rather than the general meaning can still be understood.
+                  </td>
+                </tr>
+                <!-- ---------------  -->
+                <!-- ---------------  --><!-- ---------------  -->
+                <tr>
+                  <td>4.</td>                              
+                  <td>Of course we could not rely on the government alone to prevent this problem, much of what underlines the issue is economic difficulties and public perception that Preservation groups only seek to hinder development.	</td>
+                  <td>Of course, we <strong>cannot trust</strong> the government alone to <strong>avoid</strong> this problem, <strong>many of what the problem emphasizes are</strong> economic difficulties and the public perception that <strong>conservation</strong> groups are <strong>just trying</strong> to <strong>prevent development</strong>.</td>
+                  <td>1</td>
+                </tr>
+                <tr style="border-bottom: 2px solid black;">
+                  <td></td>
+                  <td colspan="3">
+                  <strong>Explanaition:</strong> Despite the many changes, the sentence retained its meaning.
+                  </td>
+                </tr>
+                <!-- ---------------  -->
+                <!-- ---------------  --><!-- ---------------  -->
+                <tr>
+                  <td>4.</td>                              
+                  <td>I met his parents Jack and Gill.</td>
+                  <td>I met his parents<strong>,</strong> Jack, and Gill.</td>
+                  <td>0</td>
+                </tr>
+                <tr style="border-bottom: 2px solid black;">
+                  <td></td>
+                  <td colspan="3">
+                  <strong>Explanaition:</strong> The addition of the comma changed who the parents are. In the original sentence the parents <strong>are</strong> Jack and Gill.
+                  </td>
+                </tr>
+                <!-- ---------------  -->
+                
+                
+              </table>
             </div>
-      
-            <ul style="display: block">
-                  <li>
-                    brave soldier - I fight to defend my honor. I will keep my village
-                    safe from any threat. It is my duty to protect my beloved wife.
-                    -<em> good </em> (the character name and description fit
-                    well)
-                  </li> <br>
-                  <li>
-                    noble - I am the daughter of a great warrior. My family name carries
-                    a lot of weight where I live, so I'm accepted amongst nobility.
-                    &nbsp; - <em>passable</em> (the character description is technically
-                    not a noble, but accepted by nobles)
-                  </li> <br>
-                  <li>
-                    pig - I cannot stand being part of royalty. I long to adventure at
-                    sea. My father would never allow it though. &nbsp;-
-                    <em>bad</em> (the character is a pig, not royalty)
-                  </li>
-                </ul> 
           </div>
         </div>
       </div>
@@ -109,56 +166,7 @@
         <div id="scrolled_one" class="split down centered" style="padding-left: 10px;">
           <p>${passage}</p>
           ${correct_choice}
-          <!-- <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
-            pellentesque eleifend. Curabitur congue tortor in sapien aliquam
-            hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
-            augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
-            sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
-            ullamcorper mauris ultrices consectetur.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
-            pellentesque eleifend. Curabitur congue tortor in sapien aliquam
-            hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
-            augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
-            sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
-            ullamcorper mauris ultrices consectetur.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
-            pellentesque eleifend. Curabitur congue tortor in sapien aliquam
-            hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
-            augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
-            sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
-            ullamcorper mauris ultrices consectetur.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
-            pellentesque eleifend. Curabitur congue tortor in sapien aliquam
-            hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
-            augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
-            sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
-            ullamcorper mauris ultrices consectetur.
-            <span id='here'><mark class="big-font"> Some extra text Some extra text Some extra text Some extra text Some extra text Some
-                extra text Some extra text Some extra text Some extra text </mark></span>
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
-            pellentesque eleifend. Curabitur congue tortor in sapien aliquam
-            hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
-            augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
-            sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
-            ullamcorper mauris ultrices consectetur.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit
-            pellentesque eleifend. Curabitur congue tortor in sapien aliquam
-            hendrerit. Fusce viverra luctus augue ut euismod. Sed facilisis arcu
-            augue, non tincidunt erat gravida in. Vestibulum congue consequat lorem,
-            sed mattis justo laoreet in. Duis vitae velit risus. Mauris at nisi
-            ullamcorper mauris ultrices consectetur.
-          </p> -->
+          
         </div>
       </div>
       <div id="right" class="right_content" style="display: block">
@@ -170,13 +178,13 @@
           
               <div class="btn-group" data-toggle="buttons">
                 <label class="btn btn-primary button2 input-field big-font">
-                  <input type="radio" name="answers" value="0" id="bad"> Completely different
+                  <input type="radio" name="answers" value="1" id="good">The <strong>content is preserved</strong>. The<br>changes did not affect the meaning
                 </label>
                 <label class="btn btn-primary button2 input-field big-font">
-                  <input type="radio" name="answers" value="0.5" id="S2"> Slightly different
+                  <input type="radio" name="answers" value="0.5" id="nosnos">I understood <strong>most of the original<br>meaning</strong> despite the changes
                 </label>
                 <label class="btn btn-primary button2 input-field big-font">
-                  <input type="radio" name="answers" value="1" id="good"> Exactly the same
+                  <input type="radio" name="answers" value="0" id="bad">The meaning is <strong>very different</strong><br>because of the changes
                 </label>
               </div>          
             </div>
@@ -219,14 +227,15 @@
 </script>
 
 <style>
-  .panel-heading {
-      position: relative;
-  }
-  
-  .button2 {
-  background-color: white; 
-  color: black; 
-  border: 2px solid #008CBA;
+.panel-heading {
+    position: relative;
+}
+
+
+.button2 {
+background-color: white; 
+color: black; 
+border: 2px solid #008CBA;
 }
 
 .button2:hover {
@@ -239,7 +248,6 @@
       content: "\e072";
       /* "play" icon */
       position: absolute;
-      color: #8fabff; /*#b0c5d8*/
       font-size: 18px;
       line-height: 22px;
       right: 20px;
@@ -380,6 +388,21 @@
 
   .big-font {
     font-size: 15px;
+  }
+
+  .good:hover{
+    background-color: green;
+    color: white;
+  }
+
+  .nosnos:hover{
+    background-color: orange;
+    color: white;
+  }
+
+  .bad:hover{
+    background-color: maroon;
+    color: white;
   }
 
 </style>

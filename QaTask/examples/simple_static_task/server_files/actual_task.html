@@ -8,7 +8,7 @@
 <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade in" id="exampleModal" role="dialog"
   tabindex="-1">
   <div class="modal-dialog" role="document" style="width: fit-content;">
-    <div class="modal-content" style="width: 95%;">
+    <div class="modal-content" style="width: 95%; margin: auto;">
       <div class="modal-header">
         <strong> &nbsp; Instructions</strong>
         <button aria-label="Close" class="close" data-dismiss="modal" type="button">
@@ -75,14 +75,14 @@
                 <tr style="border-bottom: 2px solid black;">
                   <th>No.</th>
                   <th>Original</th>
-                  <th>Modified</th>
+                  <th class="padding_table">Modified</th>
                   <th>Our Rating (0, 0.5, 1)</th>
                 </tr>
                 <tr>
                   <td>1.</td>
                   <td>Often an organization's decision to cease operations in a country has more to do with a lack of financial support than the successful completion of their programming.</td>
-                  <td>Often <strong>A</strong>n <strong>watchdog</strong>'s decision to <strong>withhold</strong> operations in a <strong>globe</strong> has more to agree with a lack of <strong>biz wish</strong> than the successful <strong>initiation</strong> of their <strong>TV</strong>.</td>
-                  <td>0</td>
+                  <td class="padding_table">Often <strong>A</strong>n <strong>watchdog</strong>'s decision to <strong>withhold</strong> operations in a <strong>globe</strong> has more to agree with a lack of <strong>biz wish</strong> than the successful <strong>initiation</strong> of their <strong>TV</strong>.</td>
+                  <td class="center_tabel">0</td>
                 </tr>
                 <tr style="border-bottom: 2px solid black;">
                   <td></td>
@@ -94,8 +94,8 @@
                 <tr>
                   <td>2.</td>                              
                   <td>MHUs are limited in the number of services they can provide and the frequency at which they are available to any one community.	</td>
-                  <td>MHUs are limited in the number of services they would give and the frequency at which they are <strong>saver</strong> to any one community.</td>
-                  <td>0.5</td>
+                  <td class="padding_table">MHUs are limited in the number of services they would give and the frequency at which they are <strong>saver</strong> to any one community.</td>
+                  <td class="center_tabel">0.5</td>
                 </tr>
                 <tr style="border-bottom: 2px solid black;">
                   <td></td>
@@ -107,8 +107,8 @@
                 <tr>
                   <td>3.</td>                              
                   <td>Two important US officials in Luanda, Robert W. Hultslander, the CIA station chief, and Tom Killoran, the American Consul General, agreed that the MPLA were the most qualified of the groups to govern and sought peaceful relations with Washington.</td>
-                  <td>Two <strong>main</strong> <strong>U.S.</strong> officials in Luanda, Robert W. Hultslander, the CIA <strong>head of state</strong>, and Tom Killoran, the U.S. <strong>consulate</strong>, <strong>accepted</strong> that the most qualified MPLA groups to govern and <strong>seek peaceful</strong> relations with Washington.</td>
-                  <td>0</td>
+                  <td class="padding_table">Two <strong>main</strong> <strong>U.S.</strong> officials in Luanda, Robert W. Hultslander, the CIA <strong>head of state</strong>, and Tom Killoran, the U.S. <strong>consulate</strong>, <strong>accepted</strong> that the most qualified MPLA groups to govern and <strong>seek peaceful</strong> relations with Washington.</td>
+                  <td class="center_tabel">0</td>
                 </tr>
                 <tr style="border-bottom: 2px solid black;">
                   <td></td>
@@ -121,8 +121,8 @@
                 <tr>
                   <td>4.</td>                              
                   <td>Of course we could not rely on the government alone to prevent this problem, much of what underlines the issue is economic difficulties and public perception that Preservation groups only seek to hinder development.	</td>
-                  <td>Of course, we <strong>cannot trust</strong> the government alone to <strong>avoid</strong> this problem, <strong>many of what the problem emphasizes are</strong> economic difficulties and the public perception that <strong>conservation</strong> groups are <strong>just trying</strong> to <strong>prevent development</strong>.</td>
-                  <td>1</td>
+                  <td class="padding_table">Of course, we <strong>cannot trust</strong> the government alone to <strong>avoid</strong> this problem, <strong>many of what the problem emphasizes are</strong> economic difficulties and the public perception that <strong>conservation</strong> groups are <strong>just trying</strong> to <strong>prevent development</strong>.</td>
+                  <td class="center_tabel">1</td>
                 </tr>
                 <tr style="border-bottom: 2px solid black;">
                   <td></td>
@@ -135,8 +135,8 @@
                 <tr>
                   <td>4.</td>                              
                   <td>I met his parents Jack and Gill.</td>
-                  <td>I met his parents<strong>,</strong> Jack, and Gill.</td>
-                  <td>0</td>
+                  <td class="padding_table">I met his parents<strong>,</strong> Jack, and Gill.</td>
+                  <td class="center_tabel">0</td>
                 </tr>
                 <tr style="border-bottom: 2px solid black;">
                   <td></td>
@@ -352,6 +352,14 @@ border: 2px solid #008CBA;
     height: 100px;
     /*background-color: green; */
     margin: 10px;
+  }
+
+  .padding_table {
+    padding-left: 50px;
+  }
+
+  .center_tabel {
+    text-align: center;
   }
 
   /* Control the left side */

@@ -28,15 +28,6 @@
 </div>
 
 <!-- Content -->
-<!-- <p>
-
-  <div  data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="true" aria-controls="collapseExample1"> 
-    hi
-  </div>
-</p>
-<div class="collapse" id="collapseExample1">
-    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-</div> -->
 
 <section class="container" id="Other" style="
     margin-bottom: 15px;
@@ -50,7 +41,7 @@
     
       <div class="panel panel-primary" style="margin: 8px;">
         <div class="panel-heading" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true"
-        aria-controls="collapseExample"style="background-color: #2a4b6d; border-color:#2a4b6d;" onclick="onCollapse()">
+        aria-controls="collapseExample" style="background-color: #2a4b6d; border-color:#2a4b6d;" onclick="onCollapse()">
         <strong style="color: white;"> Instructions </strong> 
         <div id="collapse-text">[Click to Expand]</div>
       </div>
@@ -66,6 +57,80 @@
                 in this study. 
               </strong>
             </p>
+            <p>
+              This task is part of a study on text anonymization techniques. An anonymization technique modifies a sentence to hide the writing style of the author. 
+              The technique, however, must <em>preserve the content</em> of the original text. <b>Content preservation</b> means that we need to maintain the original 
+              meaning of the sentence and convey the same information as intended by the original author.
+            </p>
+            <p>
+              Your role in this task is to help us evaluate the modified sentences <b>in terms of content preservation</b>. 
+              We are not interested in how fluent the sentence is. 
+              If some information is in the original sentence then it should also be in the modified sentence. 
+              If there is <b>extra information</b> in the modified sentence that does not contradict with the original sentence, then that <b>is acceptable</b>.
+            </p>
+
+            <div style="border: black;">
+              <p style="padding-top: 20px;"><b>Task preview:</b></p>
+              <p>
+                Each task is comprised of two sentences, an <b>original</b> one and a <b>modified</b> version of it. 
+                Below them is the passage from which the original sentence was taken. Following is an example:
+
+              </p>
+              <table style="border:solid #008CBA">
+                <tr>
+                  <td colspan="3">
+                    <label>How do you rate the modified sentence in terms of content preservation?</label>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+
+                <tr >
+                  <td class="padding_table_short"><b>Original Sentence</b>: I am the original sentence.</td>                                  
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr >
+                  <td class="padding_table_short"><b>Modified Sentence</b>: I am the modified version of origianl.</td>                                  
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>You can consult the context below if you think it will help you make a better decision. <br>
+                      We highlighted the location of the original sentence as shown below.</p>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td colspan="3">
+                    <div class="explanation-content" style="background-color: white !important">
+                      <strong>Context:</strong> [SOME SENTENCES ...] <mark>&lt;-- the original sentece is taken from here --&gt;</mark> [... MORE SENTENCES].
+                    </div>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                  </td>
+              </tr>
+              </table>
+              <p>
+                <br>
+                The original, unmodified passage from which the original sentence is taken is provided to clarify the context. You do not have to read this passage, but you are free to do so. 
+                The examples, on the other hand, are <b>suggested as guidelines</b> to help you rate the modified sentences.
+              </p>
+            </div>
+
+            <div style="display: block;" style="font-size: 14;">
+              <p style="padding-top: 20px;"><b>The rating system:</b></p>
+              <p>
+                When rating the modified sentences for content preservation, we ask you to choose one of the three options below.
+              </p>
+              <ol>
+                <li>The modified sentence includes all the information from the original one.</li><br>
+                <li>Some information was preserved but some is missing.</li><br>
+                <li>Important information is missing.</li><br>
+              </ol>
+            </div>
             <div style="display: block;" style="font-size: 14;">
               <p>In the table below, we provide some examples that we rated for your reference. <br>
                 <strong>The Rating</strong> that we used is: 1 for preserving the meaning as it is. 0.5 for partially preserving the meaning (or preserving some of it), 
@@ -76,13 +141,13 @@
                   <th>No.</th>
                   <th class="padding_table_short">Original</th>
                   <th class="padding_table_long">Modified</th>
-                  <th>Our Rating (0, 0.5, 1)</th>
+                  <th style="text-align: center ; width:fit-content;">Option (1, 2, 3)</th>
                 </tr>
                 <tr>
                   <td>1.</td>
                   <td class="padding_table_short">Often an organization's decision to cease operations in a country has more to do with a lack of financial support than the successful completion of their programming.</td>
                   <td class="padding_table_long">Often <strong>A</strong>n <strong>watchdog</strong>'s decision to <strong>withhold</strong> operations in a <strong>globe</strong> has more to agree with a lack of <strong>biz wish</strong> than the successful <strong>initiation</strong> of their <strong>TV</strong>.</td>
-                  <td class="center_tabel_content">0</td>
+                  <td class="center_tabel_content">3</td>
                 </tr>
                 <tr style="border-bottom: 2px solid black;">
                   <td></td>
@@ -97,7 +162,7 @@
                   <td>2.</td>                              
                   <td class="padding_table_short">MHUs are limited in the number of services they can provide and the frequency at which they are available to any one community.	</td>
                   <td class="padding_table_long">MHUs are limited in the number of services they would give and the frequency at which they are <strong>saver</strong> to any one community.</td>
-                  <td class="center_tabel_content">0.5</td>
+                  <td class="center_tabel_content">1</td>
                 </tr>
                 <tr style="border-bottom: 2px solid black;">
                   <td></td>
@@ -112,7 +177,7 @@
                   <td>3.</td>                              
                   <td class="padding_table_short">Two important US officials in Luanda, Robert W. Hultslander, the CIA station chief, and Tom Killoran, the American Consul General, agreed that the MPLA were the most qualified of the groups to govern and sought peaceful relations with Washington.</td>
                   <td class="padding_table_long">Two <strong>main</strong> <strong>U.S.</strong> officials in Luanda, Robert W. Hultslander, the CIA <strong>head of state</strong>, and Tom Killoran, the U.S. <strong>consulate</strong>, <strong>accepted</strong> that the most qualified MPLA groups to govern and <strong>seek peaceful</strong> relations with Washington.</td>
-                  <td class="center_tabel_content">0</td>
+                  <td class="center_tabel_content">3</td>
                 </tr>
                 <tr style="border-bottom: 2px solid black;">
                   <td></td>
@@ -132,7 +197,7 @@
                 </tr>
                 <tr style="border-bottom: 2px solid black;">
                   <td></td>
-                  <td colspan="3">
+                  <td colspan="2">
                     <div class="explanation-content">
                       <strong>Explanaition:</strong> Despite the many changes, the sentence retained its meaning.
                     </div>
@@ -160,23 +225,24 @@
               </table>
             </div>
           </div>
-        </div>
+          <div style="align-items:center ;"><input type="button" value="Hide instructions" ondblclick="onCollapse()"></div>
+        </div>        
       </div>
     
     <!-- End Instructions -->
     <!-- Content Body -->
     <div id="big_one" class="form_Qs">
       <div id="left" class="left_content" >
-        <div id="dynamic_one" class="split up centered big-font" style="padding-left: 10px;">
-          <p><strong>Sentence 1: </strong>${sentence1}</p>
-          <p><strong>Sentence 2: </strong>${sentence2}</p>
+        <div id="dynamic_one" class="split up centered big-font" style="padding-left: 10px;">                   
+          <p><strong>Original sentence: </strong>${sentence1}</p>
+          <p><strong>Modified sentence: </strong>${sentence2}</p>
           <p>
             You can consult the context below if you think it will help you make a better decision.
           </p>
         </div>
         <div id="scrolled_one" class="split down centered" style="padding-left: 10px;">
           <p>${passage}</p>
-          ${correct_choice}
+          <!-- ${correct_choice} -->
           
         </div>
       </div>
@@ -184,21 +250,20 @@
         <section>
           <fieldset>
             <div class="input-group split_right big-font" name="rating">
-              <label>How similar is the meaning of Sentence 1 and Sentence 2?</label>
+              <label>How do you rate the modified sentence in terms of content preservation?</label>
               <br>
-          
-              <!-- <div class="btn-group" data-toggle="buttons">
-                <label class="btn btn-primary button2 input-field big-font choices">
-                  <input type="radio" name="answers" value="1" id="good">The <b>content is preserved</b>. The<br>changes did not affect the meaning
-                </label>
-                <label class="btn btn-primary button2 input-field big-font choices">
-                  <input type="radio" name="answers" value="0.5" id="nosnos">I understood <b>most of the original<br>meaning</b> despite the changes
-                </label>
-                <label class="btn btn-primary button2 input-field big-font choices">
-                  <input type="radio" name="answers" value="0" id="bad">The meaning is <b>very different</b><br>because of the changes
-                </label>
-              </div>           -->
               <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary button2 input-field big-font choices">
+                  <input type="radio" name="answers" value="1" id="good">The modified sentence <b>includes all the information</b> from the original one.
+                </label>
+                <label class="btn btn-primary button2 input-field big-font choices">
+                  <input type="radio" name="answers" value="0.5" id="nosnos"><b>Some information was preserved</b> in the modified sentence but some is missing.                   
+                </label>
+                <label class="btn btn-primary button2 input-field big-font choices">
+                  <input type="radio" name="answers" value="0" id="bad">The modified sentence is <b>missing important information</b>.
+                </label>
+              </div>     
+              <!-- <div class="btn-group" data-toggle="buttons">
                 <label class="btn btn-primary button2 input-field big-font choices">
                   <input type="radio" name="answers" value="1" id="good">The <b>content is preserved</b>. The changes did not affect the meaning
                 </label>
@@ -208,25 +273,13 @@
                 <label class="btn btn-primary button2 input-field big-font choices">
                   <input type="radio" name="answers" value="0" id="bad">The meaning is <b>very different</b> because of the changes
                 </label>
-              </div>      
+              </div>       -->
             </div>
           
           </fieldset>
         </section>
       </div>
     </div>
-
-    <!--
-    <div id="stupid_one">
-      <p>
-        <small>
-          <strong> Your Agent Id: </strong>
-          <span id="agent_id"> ${mephisto_agent_id} </span>
-        </small>
-      </p>
-    </div>
-    -->
-
   </div>
   <!-- End Content Body -->
 

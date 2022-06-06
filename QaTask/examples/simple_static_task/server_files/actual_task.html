@@ -187,17 +187,28 @@
               <label>How similar is the meaning of Sentence 1 and Sentence 2?</label>
               <br>
           
+              <!-- <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary button2 input-field big-font choices">
+                  <input type="radio" name="answers" value="1" id="good">The <b>content is preserved</b>. The<br>changes did not affect the meaning
+                </label>
+                <label class="btn btn-primary button2 input-field big-font choices">
+                  <input type="radio" name="answers" value="0.5" id="nosnos">I understood <b>most of the original<br>meaning</b> despite the changes
+                </label>
+                <label class="btn btn-primary button2 input-field big-font choices">
+                  <input type="radio" name="answers" value="0" id="bad">The meaning is <b>very different</b><br>because of the changes
+                </label>
+              </div>           -->
               <div class="btn-group" data-toggle="buttons">
                 <label class="btn btn-primary button2 input-field big-font choices">
-                  <input type="radio" name="answers" value="1" id="good">The <strong>content is preserved</strong>. The<br>changes did not affect the meaning
+                  <input type="radio" name="answers" value="1" id="good">The <b>content is preserved</b>. The changes did not affect the meaning
                 </label>
                 <label class="btn btn-primary button2 input-field big-font choices">
-                  <input type="radio" name="answers" value="0.5" id="nosnos">I understood <strong>most of the original<br>meaning</strong> despite the changes
+                  <input type="radio" name="answers" value="0.5" id="nosnos">I understood <b>most of the original meaning</b> despite the changes
                 </label>
                 <label class="btn btn-primary button2 input-field big-font choices">
-                  <input type="radio" name="answers" value="0" id="bad">The meaning is <strong>very different</strong><br>because of the changes
+                  <input type="radio" name="answers" value="0" id="bad">The meaning is <b>very different</b> because of the changes
                 </label>
-              </div>          
+              </div>      
             </div>
           
           </fieldset>
@@ -253,7 +264,7 @@
 
 .button2 {
 background-color: white; 
-color: black; 
+color: black;
 border: 2px solid #008CBA;
 }
 
@@ -262,27 +273,28 @@ border: 2px solid #008CBA;
   color: white;
 }
 
-  #collapse-text {
-    padding-right: 40px;
-  }
 
-  .panel-heading[data-toggle="collapse"]:after {
-      font-family: 'Glyphicons Halflings';
-      content: "\e072";
-      /* "play" icon */
-      position: absolute;
-      font-size: 18px;
-      line-height: 22px;
-      right: 20px;
-      top: calc(50% - 10px);
+#collapse-text {
+  padding-right: 40px;
+}
 
-      /* rotate "play" icon from > (right arrow) to down arrow */
-      -webkit-transform: rotate(-90deg);
-      -moz-transform: rotate(-90deg);
-      -ms-transform: rotate(-90deg);
-      -o-transform: rotate(-90deg);
-      transform: rotate(-90deg);
-  }
+.panel-heading[data-toggle="collapse"]:after {
+    font-family: 'Glyphicons Halflings';
+    content: "\e072";
+    /* "play" icon */
+    position: absolute;
+    font-size: 18px;
+    line-height: 22px;
+    right: 20px;
+    top: calc(50% - 10px);
+
+    /* rotate "play" icon from > (right arrow) to down arrow */
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
 
   .panel-heading strong {
     font-size: 18px;
@@ -442,10 +454,7 @@ border: 2px solid #008CBA;
 
   .choices{
     white-space: normal;
-    word-break: break-all;
+    word-break: break-word;
   }
-
-
-
 
 </style>

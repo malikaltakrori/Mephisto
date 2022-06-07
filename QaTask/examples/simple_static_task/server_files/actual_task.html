@@ -46,8 +46,9 @@
         <div id="collapse-text">[Click to Expand]</div>
       </div>
     
-      <div class="collapse" id="collapseExample">
-        <div class="panel-body" id="instructions" style="font-size: 16px;">
+
+      <div class="collapse" id="collapseExample" >
+        <div class="panel-body" id="instructions" style="font-size: 16px; height: 500px; overflow:scroll;"">
             <p>
               <strong padding=10%>
                 Hello, and thank you for participating in our study! <br>
@@ -69,12 +70,12 @@
               If there is <b>extra information</b> in the modified sentence that does not contradict with the original sentence, then that <b>is acceptable</b>.
             </p>
 
+            <!-- Task Preview -->
             <div style="border: black;">
               <p style="padding-top: 20px;"><b>Task preview:</b></p>
               <p>
                 Each task is comprised of two sentences, an <b>original</b> one and a <b>modified</b> version of it. 
-                Below them is the passage from which the original sentence was taken. Following is an example:
-
+                Below them is the original, unmodified passage from which the original sentence is taken. 
               </p>
               <table style="border:solid #008CBA">
                 <tr>
@@ -115,11 +116,12 @@
               </table>
               <p>
                 <br>
-                The original, unmodified passage from which the original sentence is taken is provided to clarify the context. You do not have to read this passage, but you are free to do so. 
+                The passage is provided to clarify the context. You do not have to read it but you are free to do so. 
                 The examples, on the other hand, are <b>suggested as guidelines</b> to help you rate the modified sentences.
               </p>
             </div>
 
+            <!-- The rating system -->
             <div style="display: block;" style="font-size: 14;">
               <p style="padding-top: 20px;"><b>The rating system:</b></p>
               <p>
@@ -131,101 +133,254 @@
                 <li>Important information is missing.</li><br>
               </ol>
             </div>
+
+            <!-- # examples -->
             <div style="display: block;" style="font-size: 14;">
-              <p>In the table below, we provide some examples that we rated for your reference. <br>
-                <strong>The Rating</strong> that we used is: 1 for preserving the meaning as it is. 0.5 for partially preserving the meaning (or preserving some of it), 
-                and 0 if the meaning changes completely, or a key fact (from your perspective) is changed.
-              </p>
-              <table>
-                <tr style="border-bottom: 2px solid black;">
-                  <th>No.</th>
-                  <th class="padding_table_short">Original</th>
-                  <th class="padding_table_long">Modified</th>
-                  <th style="text-align: center ; width:fit-content;">Option (1, 2, 3)</th>
-                </tr>
-                <tr>
-                  <td>1.</td>
-                  <td class="padding_table_short">Often an organization's decision to cease operations in a country has more to do with a lack of financial support than the successful completion of their programming.</td>
-                  <td class="padding_table_long">Often <strong>A</strong>n <strong>watchdog</strong>'s decision to <strong>withhold</strong> operations in a <strong>globe</strong> has more to agree with a lack of <strong>biz wish</strong> than the successful <strong>initiation</strong> of their <strong>TV</strong>.</td>
-                  <td class="center_tabel_content">3</td>
-                </tr>
-                <tr style="border-bottom: 2px solid black;">
-                  <td></td>
-                  <td colspan="3">
-                    <div class="explanation-content">
-                      <strong>Explanaition:</strong> The changes broke the sentence meaning because the words in <strong>bold</strong> do not give the same meaning.
-                    </div>
-                </td>
-                </tr>
-                <!-- ---------------  -->
-                <tr>
-                  <td>2.</td>                              
-                  <td class="padding_table_short">MHUs are limited in the number of services they can provide and the frequency at which they are available to any one community.	</td>
-                  <td class="padding_table_long">MHUs are limited in the number of services they would give and the frequency at which they are <strong>saver</strong> to any one community.</td>
-                  <td class="center_tabel_content">1</td>
-                </tr>
-                <tr style="border-bottom: 2px solid black;">
-                  <td></td>
-                  <td colspan="3">
-                    <div class="explanation-content">
-                      <strong>Explanaition:</strong> Here, it is not that only one word was changed, but rather than the general meaning can still be understood.
-                    </div>
-                  </td>
-                </tr>
-                <!-- ---------------  --><!-- ---------------  -->
-                <tr>
-                  <td>3.</td>                              
-                  <td class="padding_table_short">Two important US officials in Luanda, Robert W. Hultslander, the CIA station chief, and Tom Killoran, the American Consul General, agreed that the MPLA were the most qualified of the groups to govern and sought peaceful relations with Washington.</td>
-                  <td class="padding_table_long">Two <strong>main</strong> <strong>U.S.</strong> officials in Luanda, Robert W. Hultslander, the CIA <strong>head of state</strong>, and Tom Killoran, the U.S. <strong>consulate</strong>, <strong>accepted</strong> that the most qualified MPLA groups to govern and <strong>seek peaceful</strong> relations with Washington.</td>
-                  <td class="center_tabel_content">3</td>
-                </tr>
-                <tr style="border-bottom: 2px solid black;">
-                  <td></td>
-                  <td colspan="3">
-                    <div class="explanation-content">
-                      <strong>Explanaition:</strong> Here, it is not that only one word was changed, but rather than the general meaning can still be understood.
-                    </div>
-                  </td>
-                </tr>
-                <!-- ---------------  -->
-                <!-- ---------------  --><!-- ---------------  -->
-                <tr>
-                  <td>4.</td>                              
-                  <td class="padding_table_short">Of course we could not rely on the government alone to prevent this problem, much of what underlines the issue is economic difficulties and public perception that Preservation groups only seek to hinder development.	</td>
-                  <td class="padding_table_long">Of course, we <strong>cannot trust</strong> the government alone to <strong>avoid</strong> this problem, <strong>many of what the problem emphasizes are</strong> economic difficulties and the public perception that <strong>conservation</strong> groups are <strong>just trying</strong> to <strong>prevent development</strong>.</td>
-                  <td class="center_tabel_content">1</td>
-                </tr>
-                <tr style="border-bottom: 2px solid black;">
-                  <td></td>
-                  <td colspan="2">
-                    <div class="explanation-content">
-                      <strong>Explanaition:</strong> Despite the many changes, the sentence retained its meaning.
-                    </div>
-                  </td>
-                </tr>
-                <!-- ---------------  -->
-                <!-- ---------------  --><!-- ---------------  -->
-                <tr>
-                  <td>4.</td>                              
-                  <td class="padding_table_short">I met his parents Jack and Gill.</td>
-                  <td class="padding_table_long">I met his parents<strong>,</strong> Jack, and Gill.</td>
-                  <td class="center_tabel_content">0</td>
-                </tr>
-                <tr style="border-bottom: 2px solid black;">
-                  <td></td>
-                  <td colspan="3">
-                    <div class="explanation-content">
-                      <strong>Explanaition:</strong> The addition of the comma changed who the parents are. In the original sentence the parents <strong>are</strong> Jack and Gill.
-                    </div>
-                  </td>
-                </tr>
-                <!-- ---------------  -->
-                
-                
-              </table>
+              <p style="padding-top: 20px;"><b>Examples:</b></p>
+              <p>In the table below, we provide some examples on each one of the rating options.</p>
+              <ol class="ol_padleft" id="First">
+                <li>The modified sentence includes all the information from the original one.</li>
+                <ol class="ol_padleft" type="a">
+                  <li>Adding typos, switching the letter case in random places, or changing/removing punctuation.</li>                
+                  <table>
+                    <tr style="border-bottom: 2px solid black;">
+                      <th class="padding_table_short">Original</th>
+                      <th class="padding_table_long">Modified version(s)</th>
+                    </tr>
+                    <tr>
+                      <td class="padding_table_short">I was walking to the market.</td>
+                      <td class="padding_table_long">
+                        I was walking ot the market. <br>
+                        I was walking To the Market. <br>
+                        I was walking tothe market. <br>
+                        I was walking to the ‘market’.<br>
+                      </td>
+                    </tr>
+                    <tr style="border-bottom: 2px solid black;">                      
+                      <td colspan="2">
+                        <div class="explanation-content">
+                          <strong>Explanaition:</strong> The reader can do the corrections in their mind and understand the original meaning.
+                        </div>
+                    </td>
+                    </tr>
+                  </table>                
+                  <li>Replacing words with other words that fit the context.</li>                
+                  <table>
+                    <tr style="border-bottom: 2px solid black;">
+                      <th class="padding_table_short">Original</th>
+                      <th class="padding_table_long">Modified version(s)</th>
+                    </tr>
+                    <tr>
+                      <td class="padding_table_short">I was walking to the mall.</td>
+                      <td class="padding_table_long">
+                        I was walking to the shop.<br>
+                        I was walking towards the Market.<br>
+                        I was walking towards the Supermarket. (Note the multiple changes)<br>
+                        </td>                      
+                    </tr>
+                    <tr style="border-bottom: 2px solid black;">                      
+                      <td colspan="2">
+                        <div class="explanation-content">
+                          <strong>Explanaition:</strong>All the sentences mean that I walked to a place for shopping. While there are differences between mall, shop, market, and supermarket we consider these differences as minor ones.
+                        </div>
+                    </td>
+                    </tr>
+                  </table>                
+                  <li>Paraphrasing the sentence.</li>                
+                  <table>
+                    <tr style="border-bottom: 2px solid black;">
+                      <th class="padding_table_short">Original</th>
+                      <th class="padding_table_long">Modified version(s)</th>
+                    </tr>
+                    <tr>
+                      <td class="padding_table_short">I was walking to the market.</td>
+                      <td class="padding_table_long">
+                        I took a walk to the market. <br>
+                        I went to the market on foot. <br>
+                      </td>
+                    </tr>
+                    <tr style="border-bottom: 2px solid black;">                      
+                      <td colspan="2">
+                        <div class="explanation-content">
+                          <strong>Explanaition:</strong> After paraphrasing, we can understand that I went to market by walking.
+                        </div>
+                    </td>
+                    </tr>
+
+                    <tr>
+                      <td class="padding_table_short">I ate the cake.</td>
+                      <td class="padding_table_long">
+                        The cake was eaten by me.
+                      </td>
+                    </tr>
+                    <tr style="border-bottom: 2px solid black;">                      
+                      <td colspan="2">
+                        <div class="explanation-content">
+                          <strong>Explanaition:</strong> After paraphrasing, we understand that I did eat the cake.
+                        </div>
+                    </td>
+                    </tr>
+                    
+                  </table>                                
+                  <li>Adding additional information that does not contradict the original meaning.</li>                
+                  <table>
+                    <tr style="border-bottom: 2px solid black;">
+                      <th class="padding_table_short">Original</th>
+                      <th class="padding_table_long">Modified version(s)</th>
+                      <th></th>
+                    </tr>
+                    <tr>
+                      <td class="padding_table_short">I was walking to the market.</td>
+                      <td class="padding_table_long">I enjoyed walking towards the market.</td>
+                      <td></td>
+                    </tr>
+                    <tr style="border-bottom: 2px solid black;">                      
+                      <td colspan="2">
+                        <div class="explanation-content">
+                          <strong>Explanaition:</strong> While the extra information (I enjoyed) does not appear in the original sentence, having it does not contradict the original meaning which is “I walked to the market”.
+                        </div>
+                    </td>
+                    </tr>
+                  </table>                
+                </ol>
+                <li>Some information was preserved but some is missing.</li>
+                <ol class="ol_padleft" type="a">
+                  <li></li>                
+                  <table>
+                    <tr style="border-bottom: 2px solid black;">
+                      <th class="padding_table_short">Original</th>
+                      <th class="padding_table_long">Modified version(s)</th>
+                    </tr>
+                    <tr>
+                      <td class="padding_table_short"></td>
+                      <td class="padding_table_long"></td>
+                    </tr>
+                    <tr style="border-bottom: 2px solid black;">                      
+                      <td colspan="2">
+                        <div class="explanation-content">
+                          <strong>Explanaition:</strong> 
+                        </div>
+                    </td>
+                    </tr>
+                  </table>                
+                  <li></li>                
+                  <table>
+                    <tr style="border-bottom: 2px solid black;">
+                      <th class="padding_table_short">Original</th>
+                      <th class="padding_table_long">Modified version(s)</th>
+                    </tr>
+                    <tr>
+                      <td class="padding_table_short"></td>
+                      <td class="padding_table_long"></td>
+                    </tr>
+                    <tr style="border-bottom: 2px solid black;">                      
+                      <td colspan="2">
+                        <div class="explanation-content">
+                          <strong>Explanaition:</strong> 
+                        </div>
+                    </td>
+                    </tr>
+                  </table>                
+                  <li></li>                
+                  <table>
+                    <tr style="border-bottom: 2px solid black;">
+                      <th class="padding_table_short">Original</th>
+                      <th class="padding_table_long">Modified version(s)</th>
+                    </tr>
+                    <tr>
+                      <td class="padding_table_short"></td>
+                      <td class="padding_table_long"></td>
+                    </tr>
+                    <tr style="border-bottom: 2px solid black;">                      
+                      <td colspan="2">
+                        <div class="explanation-content">
+                          <strong>Explanaition:</strong> 
+                        </div>
+                    </td>
+                    </tr>
+                  </table>                                             
+                </ol>
+                <li>Important information is missing.</li>
+                <ol class="ol_padleft" type="a">
+                  <li></li>                
+                  <table>
+                    <tr style="border-bottom: 2px solid black;">
+                      <th class="padding_table_short">Original</th>
+                      <th class="padding_table_long">Modified version(s)</th>
+                    </tr>
+                    <tr>
+                      <td class="padding_table_short"></td>
+                      <td class="padding_table_long"></td>
+                    </tr>
+                    <tr style="border-bottom: 2px solid black;">                      
+                      <td colspan="2">
+                        <div class="explanation-content">
+                          <strong>Explanaition:</strong> 
+                        </div>
+                    </td>
+                    </tr>
+                  </table>                
+                  <li></li>                
+                  <table>
+                    <tr style="border-bottom: 2px solid black;">
+                      <th class="padding_table_short">Original</th>
+                      <th class="padding_table_long">Modified version(s)</th>
+                    </tr>
+                    <tr>
+                      <td class="padding_table_short"></td>
+                      <td class="padding_table_long"></td>
+                    </tr>
+                    <tr style="border-bottom: 2px solid black;">                      
+                      <td colspan="2">
+                        <div class="explanation-content">
+                          <strong>Explanaition:</strong> 
+                        </div>
+                    </td>
+                    </tr>
+                  </table>                
+                  <li></li>                
+                  <table>
+                    <tr style="border-bottom: 2px solid black;">
+                      <th class="padding_table_short">Original</th>
+                      <th class="padding_table_long">Modified version(s)</th>
+                    </tr>
+                    <tr>
+                      <td class="padding_table_short"></td>
+                      <td class="padding_table_long"></td>
+                    </tr>
+                    <tr style="border-bottom: 2px solid black;">                      
+                      <td colspan="2">
+                        <div class="explanation-content">
+                          <strong>Explanaition:</strong> 
+                        </div>
+                    </td>
+                    </tr>
+                  </table>                                
+                  <li></li>                
+                  <table>
+                    <tr style="border-bottom: 2px solid black;">
+                      <th class="padding_table_short">Original</th>
+                      <th class="padding_table_long">Modified version(s)</th>
+                    </tr>
+                    <tr>
+                      <td class="padding_table_short"></td>
+                      <td class="padding_table_long"></td>
+                    </tr>
+                    <tr style="border-bottom: 2px solid black;">                      
+                      <td colspan="2">
+                        <div class="explanation-content">
+                          <strong>Explanaition:</strong> 
+                        </div>
+                    </td>
+                    </tr>
+                  </table>                
+                </ol>                
+              </ol>
             </div>
           </div>
-          <div style="align-items:center ;"><input type="button" value="Hide instructions" ondblclick="onCollapse()"></div>
+          <div data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true"
+          aria-controls="collapseExample" style="justify-content:center ; display:flex;"><input type="button" value="Hide instructions" ondblclick="onCollapse()"></div>
+        </div>
         </div>        
       </div>
     
@@ -481,6 +636,10 @@ border: 2px solid #008CBA;
     background-color: #2798cf57;
   } */
 
+  .ol_padleft{
+    padding-left: 20px;
+  }
+
   #scrolled_one {
     width: 100%;
   }
@@ -511,3 +670,26 @@ border: 2px solid #008CBA;
   }
 
 </style>
+
+<!-- <table>
+  <tr style="border-bottom: 2px solid black;">
+    <th>No.</th>
+    <th class="padding_table_short">Original</th>
+    <th class="padding_table_long">Modified</th>
+    <th style="text-align: center ; width:fit-content;">Option (1, 2, 3)</th>
+  </tr>
+  <tr>
+    <td>1.</td>
+    <td class="padding_table_short">Often an organization's decision to cease operations in a country has more to do with a lack of financial support than the successful completion of their programming.</td>
+    <td class="padding_table_long">Often <strong>A</strong>n <strong>watchdog</strong>'s decision to <strong>withhold</strong> operations in a <strong>globe</strong> has more to agree with a lack of <strong>biz wish</strong> than the successful <strong>initiation</strong> of their <strong>TV</strong>.</td>
+    <td class="center_tabel_content">3</td>
+  </tr>
+  <tr style="border-bottom: 2px solid black;">
+    <td></td>
+    <td colspan="3">
+      <div class="explanation-content">
+        <strong>Explanaition:</strong> The changes broke the sentence meaning because the words in <strong>bold</strong> do not give the same meaning.
+      </div>
+  </td>
+  </tr>
+</table> -->

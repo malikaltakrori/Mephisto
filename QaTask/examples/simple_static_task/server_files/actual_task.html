@@ -135,13 +135,13 @@
             </div>
 
             <!-- # examples -->
-            <div style="display: block;" style="font-size: 14;">
+            <div class="examples" style="display: block;" style="font-size: 14;">
               <p style="padding-top: 20px;"><b>Examples:</b></p>
               <p>In the table below, we provide some examples on each one of the rating options.</p>
-              <ol class="ol_padleft" id="First">
-                <li>All the information in the origial sentnece is in the modified sentence. <b>(Content fully preserved)</b></li>
+              <ol class="ol_padleft">
+                <li class="numbered-example">All the information in the origial sentnece is in the modified sentence. <b>(Content fully preserved)</b></li>
                 <ol class="ol_padleft" type="a">
-                  <li>Adding typos, switching the letter case in random places, or adding/changing/removing punctuation.</li>                
+                  <li class="alpha-example">Adding typos, switching the letter case in random places, or adding/changing/removing punctuation.</li>                
                   <table>
                     <tr style="border-bottom: 2px solid black;">
                       <th class="padding_table_short">Original</th>
@@ -164,7 +164,7 @@
                     </td>
                     </tr>
                   </table>                
-                  <li>Replacing words with other words that fit the context.</li>                
+                  <li class="alpha-example">Replacing words with other words that fit the context.</li>                
                   <table>
                     <tr style="border-bottom: 2px solid black;">
                       <th class="padding_table_short">Original</th>
@@ -186,7 +186,7 @@
                     </td>
                     </tr>
                   </table>                
-                  <li>Paraphrasing the sentence.</li>                
+                  <li class="alpha-example">Paraphrasing the sentence.</li>                
                   <table>
                     <tr style="border-bottom: 2px solid black;">
                       <th class="padding_table_short">Original</th>
@@ -222,7 +222,7 @@
                     </tr>
                     
                   </table>                                
-                  <li>Adding information that does not contradict or modify the original meaning.</li>                
+                  <li class="alpha-example">Adding information that does not contradict or modify the original meaning.</li>                
                   <table>
                     <tr style="border-bottom: 2px solid black;">
                       <th class="padding_table_short">Original</th>
@@ -243,9 +243,9 @@
                     </tr>
                   </table>                
                 </ol>
-                <li>Some information from the original sentence is in the modified sentence but some is missing. <b>(Content partially preserved)</b></li>
+                <li class="numbered-example">Some information from the original sentence is in the modified sentence but some is missing. <b>(Content partially preserved)</b></li>
                 <ol class="ol_padleft" type="a">
-                  <li>The context helped figuring out the meaning. </li>                
+                  <li class="alpha-example">The context helped figuring out the meaning. </li>                
                   <table>
                     <tr style="border-bottom: 2px solid black;">
                       <th class="padding_table_short">Original</th>
@@ -266,7 +266,7 @@
                     </td>
                     </tr>
                   </table>                
-                  <li>The sentence has multiple modifications, but only some of them preserve the meaning.</li>                
+                  <li class="alpha-example">The sentence has multiple modifications, but only some of them preserve the meaning.</li>                
                   <table>
                     <tr style="border-bottom: 2px solid black;">
                       <th class="padding_table_short">Original</th>
@@ -293,7 +293,7 @@
                     </td>
                     </tr>
                   </table>                
-                  <li>The sentence contains multiple changes some of them do not fit the context</li>                
+                  <li class="alpha-example">The sentence contains multiple changes some of them do not fit the context</li>                
                   <table>
                     <tr style="border-bottom: 2px solid black;">
                       <th class="padding_table_short">Original</th>
@@ -312,9 +312,9 @@
                     </tr>
                   </table>                                             
                 </ol>
-                <li>Important information in the origial sentence is missing from the modified sentence. <b>(Content not preserved)</b></li>
+                <li class="numbered-example">Important information in the origial sentence is missing from the modified sentence. <b>(Content not preserved)</b></li>
                 <ol class="ol_padleft" type="a">
-                  <li>a.  Adding/removing negation</li>                
+                  <li class="alpha-example">Adding/removing negation</li>                
                   <table>
                     <tr style="border-bottom: 2px solid black;">
                       <th class="padding_table_short">Original</th>
@@ -336,7 +336,7 @@
                     </tr>
                     
                   </table>                
-                  <li>b.  Switching prepositions</li>                
+                  <li class="alpha-example">Switching prepositions</li>                
                   <table>
                     <tr style="border-bottom: 2px solid black;">
                       <th class="padding_table_short">Original</th>
@@ -354,7 +354,7 @@
                     </td>
                     </tr>
                   </table>                
-                  <li>c.  The sentence contains multiple change, and the context does not help retrieving the original meaning.</li>                
+                  <li class="alpha-example">The sentence contains multiple change, and the context does not help retrieving the original meaning.</li>                
                   <table>
                     <tr style="border-bottom: 2px solid black;">
                       <th class="padding_table_short">Original</th>
@@ -375,7 +375,7 @@
                     </td>
                     </tr>
                   </table>                                
-                  <li>d.  The paraphrasing causes a loss of information.</li>                
+                  <li class="alpha-example">The paraphrasing causes a loss of information.</li>                
                   <table>
                     <tr style="border-bottom: 2px solid black;">
                       <th class="padding_table_short">Original</th>
@@ -515,6 +515,8 @@ border: 2px solid #008CBA;
   padding-right: 40px;
 }
 
+li::marker { color: orange;}
+
 .panel-heading[data-toggle="collapse"]:after {
     font-family: 'Glyphicons Halflings';
     content: "\e072";
@@ -532,6 +534,8 @@ border: 2px solid #008CBA;
     -o-transform: rotate(-90deg);
     transform: rotate(-90deg);
 }
+
+
 
 /* width */
 ::-webkit-scrollbar {
@@ -572,6 +576,21 @@ border: 2px solid #008CBA;
       -o-transform: rotate(90deg);
       transform: rotate(90deg);
   }
+
+
+  .alpha-example {
+    color: #b5dcef;
+    font-size: 18px;
+  }
+
+  .numbered-example {
+    color: white ;
+    font-size: 20px; 
+    background-color: #2a4b6d;
+    padding: 5px;
+  }
+
+
 </style>
 
 
@@ -681,6 +700,10 @@ border: 2px solid #008CBA;
     width: 100%;
 
   }
+/* 
+  .examples > *, .examples > * > * {
+    max-width: 1500px;
+  } */
 
   #dynamic_one {
     width: 100%;
@@ -719,6 +742,7 @@ border: 2px solid #008CBA;
   .big-font {
     font-size: 15px;
   }
+  
 
   .choices{
     white-space: normal;

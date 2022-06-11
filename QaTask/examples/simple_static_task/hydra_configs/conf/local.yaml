@@ -1,0 +1,20 @@
+#@package _global_
+defaults:
+  - /mephisto/blueprint: static_task
+  - /mephisto/architect: local 
+  - /mephisto/provider: mock 
+mephisto:
+
+  blueprint:
+    data_csv: ${task_dir}/theData/realData_test.csv
+    task_source: ${task_dir}/server_files/actual_task.html
+    preview_source: ${task_dir}/server_files/actual_task_preview.html    
+    units_per_assignment: 2
+  task:
+    task_name: testing-task-3
+    task_title: "Testing with 2 datapoints"
+    task_description: "We are just testing with two samples locally."
+    task_reward: 0.3
+    task_tags: "static,task,testing"
+    # We expect to be able to handle 300 concurrent tasks without issue
+    max_num_concurrent_units: 300

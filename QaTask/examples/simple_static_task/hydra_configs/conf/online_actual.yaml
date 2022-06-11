@@ -1,0 +1,22 @@
+#@package _global_
+defaults:
+  - /mephisto/blueprint: static_task
+  - /mephisto/architect: heruko
+  - /mephisto/provider: mturk
+mephisto:
+  provider:
+    requester_name: my_mturk
+  blueprint:
+    data_csv: ${task_dir}/theData/realData_fullrun.csv
+    task_source: ${task_dir}/server_files/actual_task.html
+    preview_source: ${task_dir}/server_files/actual_task_preview.html        
+    units_per_assignment: 5
+  task:
+    task_name: online-actual
+    task_title: "Evaluating Content Preservation After Anonymization"
+    task_description: "We want to evaluate content preservation of a 
+                        sentence compared to the original one."
+    task_reward: 0.25
+    task_tags: "content preservation, evaluation"
+    # We expect to be able to handle 300 concurrent tasks without issue
+    max_num_concurrent_units: 300

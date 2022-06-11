@@ -9,6 +9,14 @@ from mephisto.abstractions.databases.local_database import LocalMephistoDB
 from mephisto.tools.examine_utils import run_examine_or_review, print_results
 from mephisto.data_model.worker import Worker
 from mephisto.data_model.unit import Unit
+from mephisto.data_model.qualification import QUAL_NOT_EXIST
+from mephisto.utils.qualifications import make_qualification_dict
+
+# Qualifications
+ALLOWLIST_QUALIFICATION = "some_allowlist_qual"
+
+
+
 
 db = None
 
@@ -31,11 +39,11 @@ def format_for_printing_data(data):
     outputs = contents["outputs"]
     output_string = f"   Answer: {outputs['answers']}\n"
     
-    if inputs['correct'] == outputs['answers']:
+    # if inputs['correct'] == outputs['answers']:
         
-        output_string += "Correct: True\n"
-    else:
-        output_string += "Correct: False\n"
+    #     output_string += "Correct: True\n"
+    # else:
+    #     output_string += "Correct: False\n"
 
         
     # found_files = outputs.get("files")

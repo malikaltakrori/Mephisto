@@ -5,13 +5,22 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "task",
+            "name": "main init",
             "type": "python",
             "request": "launch",
-            "program": "/Users/malik/myCode/Mephisto/QaTask/examples/simple_static_task/static_test_script.py",
+            "program": "/Users/malik/myCode/Mephisto/QaTask/examples/simple_static_task/main_init.py",
             "console": "integratedTerminal",
             "justMyCode": true,
-            "args": ["conf=2sents", "mephisto.architect.port=1234"]
+            // "args": ["conf=2sents", "mephisto.architect.port=1234"]
+        },
+        {
+            "name": "sandbox main init",
+            "type": "python",
+            "request": "launch",
+            "program": "/Users/malik/myCode/Mephisto/QaTask/examples/simple_static_task/main_init.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            // "args": ["conf=2sents", "mephisto.architect.port=1234"]
         },
         {
             "name": "task my conf",
@@ -26,18 +35,9 @@
             "name": "Examin",
             "type": "python",
             "request": "launch",
-            "program": "/Users/malik/myCode/Mephisto/QaTask/examples/simple_static_task/examine_results.py",
+            "program": "/Users/malik/myCode/Mephisto/QaTask/examples/simple_static_task/Qual_examine_results.py",
             "console": "integratedTerminal",
             "justMyCode": true
-        },
-        {
-            "name": "Onboarding",
-            "type": "python",
-            "request": "launch",
-            "program": "${workspaceFolder}/QaTask/examples/simple_static_task/static_run_with_onboarding.py",
-            "console": "integratedTerminal",
-            "justMyCode": true,
-            "args": ["mephisto.architect.port=1234"]
-        }, 
+        }
     ]
 }

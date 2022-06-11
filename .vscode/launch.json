@@ -11,7 +11,6 @@
             "program": "/Users/malik/myCode/Mephisto/QaTask/examples/simple_static_task/main_init.py",
             "console": "integratedTerminal",
             "justMyCode": true,
-            // "args": ["conf=2sents", "mephisto.architect.port=1234"]
         },
         {
             "name": "sandbox main init",
@@ -20,7 +19,7 @@
             "program": "/Users/malik/myCode/Mephisto/QaTask/examples/simple_static_task/main_init.py",
             "console": "integratedTerminal",
             "justMyCode": true,
-            // "args": ["conf=2sents", "mephisto.architect.port=1234"]
+            "args": ["conf=sandbox"]
         },
         {
             "name": "task my conf",

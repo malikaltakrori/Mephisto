@@ -23,12 +23,14 @@ from mephisto.utils.qualifications import make_qualification_dict
 def main(operator, cfg: DictConfig) -> None:
     shared_state = SharedStaticTaskState()
 
-    shared_state.qualifications = [
-    make_qualification_dict(
-        "maliks_Qual",
-        QUAL_EXISTS, None
-    ),
-    ]
+    # only in the main task, i.e. after doing this one. 
+    # shared_state.qualifications = [
+    # make_qualification_dict(
+    #     "maliks_Qual",
+    #     QUAL_EXISTS, None
+    # ),
+    # ]
+
 
     shared_state.mturk_specific_qualifications = [
         {
@@ -38,7 +40,7 @@ def main(operator, cfg: DictConfig) -> None:
         },
     ]
         
-    operator.launch_task_run(cfg.mephisto, shared_state )
+    operator.launch_task_run(cfg.mephisto, shared_state)
     operator.wait_for_runs_then_shutdown(skip_input=True, log_rate=30)
 
 

@@ -1,11 +1,11 @@
 #@package _global_
 defaults:
   - /mephisto/blueprint: static_task
-  - /mephisto/architect: heruko
+  - /mephisto/architect: heroku
   - /mephisto/provider: mturk
 mephisto:
   provider:
-    requester_name: my_mturk
+    requester_name: my_mt_user
   blueprint:
     data_csv: ${task_dir}/theData/realData_fullrun.csv
     task_source: ${task_dir}/server_files/actual_task.html

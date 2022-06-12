@@ -1,0 +1,830 @@
+<!-- Bootstrap v3.0.3 -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Modal -->
+<!-- MODAL -->
+
+<!-- <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade in" id="exampleModal" role="dialog"
+  tabindex="-1">
+  <div class="modal-dialog" role="document" style="width: fit-content;">
+    <div class="modal-content" style="width: 95%; margin: auto;">
+      <div class="modal-header">
+        <strong> &nbsp; Instructions</strong>
+        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+          <span aria-hidden="true"> &times; </span>
+        </button>
+      </div>
+
+      <div class="modal-body" id="modal">&nbsp;</div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-dismiss="modal" type="button">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- Content -->
+
+<section class="container" id="Other" style="
+    margin-bottom: 15px;
+    padding: 10px;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 0.9em;
+    width:100%;
+  ">
+  <div class="row col-md-28 col-md-28">
+    <!-- Instructions -->
+    
+      <div class="panel panel-primary" style="margin: 8px;">
+        <div class="panel-heading" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true"
+        aria-controls="collapseExample" style="background-color: #2a4b6d; border-color:#2a4b6d;" onclick="onCollapse()">
+        <strong style="color: white;"> Instructions </strong> 
+        <div id="collapse-text">[Click to Expand]</div>
+      </div>
+    
+
+      <div class="collapse" id="collapseExample" >
+        <div class="panel-body" id="instructions" style="font-size: 14px; height: 500px; overflow:scroll;"">
+            <p>
+              <strong padding=10%>
+                Hello, and thank you for participating in our study! <br>
+                Please start by <a
+                  href=https://www.dropbox.com/s/0ue1djz8u0effgp/Consent_form_QAAnon_4_June_2021.pdf?dl=1>dowloading the
+                  consent form</a> and saving it for your future reference. By completing this task you are giving your consent to participate
+                in this study. 
+              </strong>
+            </p>
+            <p>
+              This task is part of a study on text anonymization techniques. An anonymization technique modifies a sentence to hide the writing style of the author. 
+              The technique, however, must <em>preserve the content</em> of the original text. <b>Content preservation</b> means that we need to maintain the original 
+              meaning of the sentence and convey the same information as intended by the original author.
+            </p>
+            <p>
+              Your role in this task is to help us evaluate the modified sentences <b>in terms of content preservation</b>. 
+              We are not interested in how fluent the sentence is. 
+              If some information is in the original sentence then it should also be in the modified sentence. 
+              If there is extra information in the modified sentence that does not contradict the original sentence, then that does not violate content preservation. 
+            </p>
+
+            <!-- Task Preview -->
+            <div style="border: black;">
+              <p style="padding-top: 20px;"><b>Task preview:</b></p>
+              <p>
+                Each task is comprised of two sentences, an <b>original</b> one and a <b>modified</b> version of it. 
+                Below them is the original, unmodified passage from which the original sentence is taken. 
+              </p>
+              <table style="border:solid #008CBA">
+                <tr>
+                  <td colspan="3">
+                    <label>How do you rate the modified sentence in terms of content preservation?</label>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+
+                <tr >
+                  <td class="padding_table_short" colspan="2"><b>Original Sentence</b>: [The original sentence will show up here].</td>                                  
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr >
+                  <td class="padding_table_short" colspan="2"><b>Modified Sentence</b>: [The modified sentence will show up here].</td>         
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <p>You can consult the context below if you think it will help you make a better decision. <br>
+                      We highlighted the location of the original sentence as shown below.</p>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td colspan="3">
+                    <div class="explanation-content" style="background-color: white !important">
+                      <strong>Context:</strong> [SOME SENTENCES ...] <mark>&lt;-- the original sentece is taken from here --&gt;</mark> [... MORE SENTENCES].
+                    </div>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                  </td>
+              </tr>
+              </table>
+              <p>
+                <br>
+                The passage is provided to clarify the context. You do not have to read it but you are free to do so. 
+                The examples, on the other hand, are <b>suggested as guidelines</b> to help you rate the modified sentences.
+              </p>
+            </div>
+
+            <!-- The rating system -->
+            <div style="display: block;" style="font-size: 14;">
+              <p style="padding-top: 20px;"><b>The rating system:</b></p>
+              <p>
+                When rating the modified sentences for content preservation, we ask you to choose one of the three options below.
+              </p>
+              <ol style="margin-left: 20px;">
+                <li>All the information in the origial sentnece is in the modified sentence. <b>(Content fully preserved)</b></li><br>
+                <li>Some information from the original sentence is in the modified sentence but some is missing. <b>(Content partially preserved)</b></li><br>
+                <li>Important information in the origial sentence is missing from the modified sentence. <b>(Content not preserved)</b></li><br>
+              </ol>
+            </div>
+
+            <!-- # examples -->
+            <div class="examples" style="display: block;" style="font-size: 14;">
+              <p><b>Examples:</b></p>
+              <p>Below, we provide some examples on each one of the rating options.</p>
+              <ol class="ol_padleft">
+                <li class="numbered-example">All the information in the origial sentnece is in the modified sentence. <b>(Content fully preserved)</b></li>
+                <ol class="ol_padleft" type="a">
+                  <li class="alpha-example">Adding typos, switching the letter case in random places, or adding/changing/removing punctuation.</li>                
+                  <table>
+                    <tr style="border-bottom: 2px solid black;">
+                      <th class="padding_table_short">Original</th>
+                      <th class="padding_table_long">Modified version(s)</th>
+                    </tr>
+                    <tr>
+                      <td class="padding_table_short">I was walking to the market.</td>
+                      <td class="padding_table_long">
+                        I was walking ot the market. <br>
+                        I was walking To the Market. <br>
+                        I was walking tothe market. <br>
+                        I was walking to the ‘market’.<br>
+                      </td>
+                    </tr>
+                    <tr style="border-bottom: 2px solid black;">                      
+                      <td colspan="2">
+                        <div class="explanation-content">
+                          <strong>Explanation:</strong> As a reader, you can notice that these are typos, ignore/correct them and still understand the original meaning.
+                        </div>
+                    </td>
+                    </tr>
+                  </table>                
+                  <li class="alpha-example">Replacing words with other words that fit the context.</li>                
+                  <table>
+                    <tr style="border-bottom: 2px solid black;">
+                      <th class="padding_table_short">Original</th>
+                      <th class="padding_table_long">Modified version(s)</th>
+                    </tr>
+                    <tr>
+                      <td class="padding_table_short">I was walking to the mall.</td>
+                      <td class="padding_table_long">
+                        I was walking to the shop.<br>
+                        I was walking towards the Market.<br>
+                        I was walking towards the Supermarket. (Note the multiple changes)<br>
+                        </td>                      
+                    </tr>
+                    <tr style="border-bottom: 2px solid black;">                      
+                      <td colspan="2">
+                        <div class="explanation-content">
+                          <strong>Explanation:</strong>All the sentences mean that I walked to a place for shopping. While there are differences between mall, shop, market, and supermarket we consider these differences as minor ones.
+                        </div>
+                    </td>
+                    </tr>
+                  </table>                
+                  <li class="alpha-example">Paraphrasing the sentence.</li>                
+                  <table>
+                    <tr style="border-bottom: 2px solid black;">
+                      <th class="padding_table_short">Original</th>
+                      <th class="padding_table_long">Modified version(s)</th>
+                    </tr>
+                    <tr>
+                      <td class="padding_table_short">I was walking to the market.</td>
+                      <td class="padding_table_long">
+                        I took a walk to the market. <br>
+                        I went to the market on foot. <br>
+                      </td>
+                    </tr>
+                    <tr style="border-bottom: 2px solid black;">                      
+                      <td colspan="2">
+                        <div class="explanation-content">
+                          <strong>Explanation:</strong> After paraphrasing, we can understand that I went to market by walking.
+                        </div>
+                    </td>
+                    </tr>
+
+                    <tr>
+                      <td class="padding_table_short">I ate the cake.</td>
+                      <td class="padding_table_long">
+                        The cake was eaten by me.
+                      </td>
+                    </tr>
+                    <tr style="border-bottom: 2px solid black;">                      
+                      <td colspan="2">
+                        <div class="explanation-content">
+                          <strong>Explanation:</strong> After paraphrasing, we understand that I did eat the cake.
+                        </div>
+                    </td>
+                    </tr>
+                    
+                  </table>                                
+                  <li class="alpha-example">Adding information that does not contradict or modify the original meaning.</li>                
+                  <table>
+                    <tr style="border-bottom: 2px solid black;">
+                      <th class="padding_table_short">Original</th>
+                      <th class="padding_table_long">Modified version(s)</th>
+                      <th></th>
+                    </tr>
+                    <tr>
+                      <td class="padding_table_short">I was walking to the market.</td>
+                      <td class="padding_table_long">I enjoyed walking towards the market.</td>
+                      <td></td>
+                    </tr>
+                    <tr style="border-bottom: 2px solid black;">                      
+                      <td colspan="2">
+                        <div class="explanation-content">
+                          <strong>Explanation:</strong> While the extra information (I enjoyed) does not appear in the original sentence, having it does not contradict the original meaning which is “I walked to the market”.
+                        </div>
+                    </td>
+                    </tr>
+                  </table>                
+                </ol>
+                <li class="numbered-example">Some information from the original sentence is in the modified sentence but some is missing. <b>(Content partially preserved)</b></li>
+                <ol class="ol_padleft" type="a">
+                  <li class="alpha-example">The context helped figuring out the meaning. </li>                
+                  <table>
+                    <tr style="border-bottom: 2px solid black;">
+                      <th class="padding_table_short">Original</th>
+                      <th class="padding_table_long">Modified version(s)</th>
+                    </tr>                    
+                    <tr>
+                      <td class="padding_table_short">She was walking around in the market.</td>
+                      <td class="padding_table_long">She was walking around from the market.</td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" style="padding-bottom: 10px;"><b>Context</b>: Anny went shopping. <mark>&lt;the original sentence was here&gt;</mark>. During that walk she stopped at different places. </td>
+                    </tr>
+                    <tr style="border-bottom: 2px solid black;">                      
+                      <td colspan="2">
+                        <div class="explanation-content">
+                          <strong>Explanation:</strong> By looking at the context, specifically, that she was stopping at shops, we understand that she is still in the market walking around in it.
+                        </div>
+                    </td>
+                    </tr>
+                  </table>                
+                  <li class="alpha-example">The sentence has multiple modifications, but only some of them preserve the meaning.</li>                
+                  <table>
+                    <tr style="border-bottom: 2px solid black;">
+                      <th class="padding_table_short">Original</th>
+                      <th class="padding_table_long">Modified version(s)</th>
+                    </tr>
+                    <tr>
+                      <td class="padding_table_short">While the "Brain Drain" traditionally occurs due to a lesser-developed country not being able to offer competitive compensation to in-country doctors, conflict can have the same effect.</td>
+                      <td class="padding_table_long">While the "brain drive" is traditionally because a less developed country is unable to offer competitive compensation to local doctors, the conflict can have the same effect.</td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" style="padding-bottom: 10px;"><b>Context:</b> A second major issue, and one that has long-term post-conflict implications, is of doctor migration out of the country, also known as the “Brain Drain”. <mark>&lt;the original sentence was here&gt;</mark></td>
+                    </tr>
+                    <tr style="border-bottom: 2px solid black;">                      
+                      <td colspan="2">
+                        <div class="explanation-content">
+                          <strong>Explanation:</strong> There are several modifications in this sentence. <br>
+                          The following ones do not change the meaning:<br>
+                          Traditionally occurs due to <b>--></b> is traditionally because      &nbsp;&nbsp;&nbsp;&nbsp; Not being able <b>--></b> is unable &nbsp;&nbsp;&nbsp;&nbsp; 
+                          conflict  <b>--></b> the conflict <br>
+                          The following changes on the other hand, have a slightly different meaning: <br>
+                          In-country <b>--></b> local : In country means a national level, while local could mean the neighborhood, the community, or the city levels.<br>
+                          Lesser-developed <b>--></b> less developed : the change, less developed is more negative than lesser-developed. <br>                          
+                          Finally, brain drain <b>--></b> brain drive : The term "brain drain" is defined in the context <br>
+                          In both these last cases, there is a loss of information, but some of the original informaiton is still preserved. <br>
+                        </div>
+                    </td>
+                    </tr>
+                  </table>                
+                  <li class="alpha-example">The sentence contains multiple changes some of them do not fit the context</li>                
+                  <table>
+                    <tr style="border-bottom: 2px solid black;">
+                      <th class="padding_table_short">Original</th>
+                      <th class="padding_table_long">Modified version(s)</th>
+                    </tr>
+                    <tr>
+                      <td class="padding_table_short">I was walking to the market then stopped to tie my shoes.</td>
+                      <td class="padding_table_long">I was going to the market tehn stopped to link my shoes.</td>
+                    </tr>
+                    <tr style="border-bottom: 2px solid black;">                      
+                      <td colspan="2">
+                        <div class="explanation-content">
+                          <strong>Explanation:</strong> The first typo (tehn) is minor. The second change: “link my shoes” is very clear. We stop to tie our shoes and not to link them. One can infer the original meaning by recalling that we tie our shoes but using ‘link’ is clearly wrong.
+                        </div>
+                    </td>
+                    </tr>
+                  </table>                                             
+                </ol>
+                <li class="numbered-example">Important information in the origial sentence is missing from the modified sentence. <b>(Content not preserved)</b></li>
+                <ol class="ol_padleft" type="a">
+                  <li class="alpha-example">Adding/removing negation</li>                
+                  <table>
+                    <tr style="border-bottom: 2px solid black;">
+                      <th class="padding_table_short">Original</th>
+                      <th class="padding_table_long">Modified version(s)</th>
+                    </tr>
+                    <tr>
+                      <td class="padding_table_short">I was in a hurry.</td>
+                      <td class="padding_table_long">I was not in a hurry.</td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" style="padding-bottom: 10px;"><b>Context</b>: Today I left work late. <mark>&lt;the original sentence was here&gt;</mark>. I got home at 8pm.</td>
+                    </tr>
+                    <tr style="border-bottom: 2px solid black;">                      
+                      <td colspan="2">
+                        <div class="explanation-content">
+                          <strong>Explanation:</strong> Adding ‘not’ flips the meaning of the original sentence, ‘not’ appears natural in the sentence, and the context does not show anything wrong with the modified sentence.
+                        </div>
+                    </td>
+                    </tr>
+                    
+                  </table>                
+                  <li class="alpha-example">Switching prepositions</li>                
+                  <table>
+                    <tr style="border-bottom: 2px solid black;">
+                      <th class="padding_table_short">Original</th>
+                      <th class="padding_table_long">Modified version(s)</th>
+                    </tr>
+                    <tr>
+                      <td class="padding_table_short">I was walking to the market.</td>
+                      <td class="padding_table_long">I was walking from the market.</td>
+                    </tr>
+                    <tr style="border-bottom: 2px solid black;">                      
+                      <td colspan="2">
+                        <div class="explanation-content">
+                          <strong>Explanation:</strong> replacing ‘to’ with ‘from’ flips the meaning of the original sentence
+                        </div>
+                    </td>
+                    </tr>
+                  </table>                
+                  <li class="alpha-example">The sentence contains multiple change, and the context does not help retrieving the original meaning.</li>                
+                  <table>
+                    <tr style="border-bottom: 2px solid black;">
+                      <th class="padding_table_short">Original</th>
+                      <th class="padding_table_long">Modified version(s)</th>
+                    </tr>
+                    <tr>
+                      <td class="padding_table_short">I took a bus and went to the market to find that it was open.</td>
+                      <td class="padding_table_long">I took a nap and went to the market to find that it was closed.</td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" style="padding-bottom: 10px;"><b>Context</b>: Today I left work late and had to buy stuff. <mark>&lt;the original sentence was here&gt;</mark>. Later, I came back home.</td>
+                    </tr>
+                    <tr style="border-bottom: 2px solid black;">                      
+                      <td colspan="2">
+                        <div class="explanation-content">
+                          <strong>Explanation:</strong> The two changes, “took a nap” and “was closed” make the meaning very different. The context does not help infer the original meaning.
+                        </div>
+                    </td>
+                    </tr>
+                  </table>                                
+                  <li class="alpha-example">The paraphrasing causes a loss of information.</li>                
+                  <table>
+                    <tr style="border-bottom: 2px solid black;">
+                      <th class="padding_table_short">Original</th>
+                      <th class="padding_table_long">Modified version(s)</th>
+                    </tr>
+                    <tr>
+                      <td class="padding_table_short">This problem only surfaced in Iraq after the war.</td>
+                      <td class="padding_table_long">This problem appeared only after the war in Iraq.</td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" style="padding-bottom: 10px;"><b>Context</b>: The black market for weapons has become very accessible. <mark>&lt;the original sentence was here&gt;</mark>.</td>
+                    </tr>
+                    <tr style="border-bottom: 2px solid black;">                      
+                      <td colspan="2">
+                        <div class="explanation-content">
+                          <strong>Explanation:</strong> In the original sentence, the problem is in Iraq. In the modified sentence the problem could be in a different place (such as a neighboring country) but is caused by the war in Iraq.
+                        </div>
+                    </td>
+                    </tr>
+                  </table>                
+                </ol>                
+              </ol>
+            </div>
+          </div>
+          <div data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true"
+          aria-controls="collapseExample" style="justify-content:center ; display:flex;"> <input type="button" value="Hide instructions" ondblclick="onCollapse()" style="width: -webkit-fill-available; color: white;
+          background: #2a4b6d;
+          font-size: 15px;"></div>
+        </div>
+        </div>        
+      </div>
+    
+    <!-- End Instructions -->
+    <!-- Content Body -->
+    <div id="big_one" class="form_Qs">
+      <div id="left" class="left_content" >
+        <div id="dynamic_one" class="split up centered big-font" style="padding-left: 10px;">                   
+          <p><strong>Original sentence: </strong>${sentence1}</p>
+          <p><strong>Modified sentence: </strong>${sentence2}</p>
+          <p>
+            You can consult the context below if you think it will help you make a better decision.
+          </p>
+        </div>
+        <div id="scrolled_one" class="split down centered" style="padding-left: 10px;">
+          <p>${passage}</p>
+          <!-- ${correct_choice} -->
+          
+        </div>
+      </div>
+      <div id="right" class="right_content" style="display: block">
+        <section>
+          <fieldset>
+            <div class="input-group split_right big-font" name="rating">
+              <label>How do you rate the modified sentence in terms of content preservation?</label>
+              <br>
+              <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary button2 input-field big-font choices">
+                  <input type="radio" name="answers" value="1" id="good">
+                  <b>All the information</b> in the origial sentnece is in the modified sentence. <br><b>(Content fully preserved)</b>                  
+                  <!-- The modified sentence <b>includes all the information</b> from the original one. -->
+                </label>
+                <label class="btn btn-primary button2 input-field big-font choices">
+                  <input type="radio" name="answers" value="0.5" id="nosnos">
+                  <b>Some information</b> from the original sentence is in the modified sentence but some is missing.
+                  <br><b>(Content partially preserved)</b>
+                  <!-- <b>Some information was preserved</b> in the modified sentence but some is missing.                    -->
+                </label>
+                <label class="btn btn-primary button2 input-field big-font choices">
+                  <input type="radio" name="answers" value="0" id="bad">
+                  Important information in the origial sentence is missing from the modified sentence. <br><b>(Content not preserved)</b>
+                  <!-- The modified sentence is <b>missing important information</b>. -->
+                </label>
+              </div>     
+              <!-- <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary button2 input-field big-font choices">
+                  <input type="radio" name="answers" value="1" id="good">The <b>content is preserved</b>. The changes did not affect the meaning
+                </label>
+                <label class="btn btn-primary button2 input-field big-font choices">
+                  <input type="radio" name="answers" value="0.5" id="nosnos">I understood <b>most of the original meaning</b> despite the changes
+                </label>
+                <label class="btn btn-primary button2 input-field big-font choices">
+                  <input type="radio" name="answers" value="0" id="bad">The meaning is <b>very different</b> because of the changes
+                </label>
+              </div>       -->
+            </div>
+          
+          </fieldset>
+        </section>
+      </div>
+    </div>
+  </div>
+  <!-- End Content Body -->
+
+</section>
+
+<script async>
+  $(function () {
+    modal_body = $("#modal");
+    $("#instructions").clone().appendTo(modal_body);
+    $(".modal").modal("show");
+  });
+
+  $(document).ready(function(){
+    document.getElementById("here").scrollIntoView(
+      /* { behavior: "smooth", inline: "nearest" } */
+      { behavior: "smooth"}
+  )});
+
+
+  function onCollapse() {
+    if (document.getElementById("collapse-text").innerHTML == "[Click to Expand]") {
+      document.getElementById("collapse-text").innerHTML = "[Click to Collapse]"
+    } else {
+      document.getElementById("collapse-text").innerHTML = "[Click to Expand]"
+    }
+  }
+  
+</script>
+
+<style>
+.panel-heading {
+    position: relative;
+}
+
+
+.button2 {
+background-color: white; 
+color: black;
+border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+
+#collapse-text {
+  padding-right: 40px;
+}
+
+li::marker { color: orange;}
+
+.panel-heading[data-toggle="collapse"]:after {
+    font-family: 'Glyphicons Halflings';
+    content: "\e072";
+    /* "play" icon */
+    position: absolute;
+    font-size: 18px;
+    line-height: 22px;
+    right: 20px;
+    top: calc(50% - 10px);
+
+    /* rotate "play" icon from > (right arrow) to down arrow */
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 0px;
+}
+
+/* html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+} */
+
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #2a4b6d; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+  .panel-heading strong {
+    font-size: 18px;
+  }
+
+  .panel-heading[data-toggle="collapse"].collapsed:after {
+      /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      transform: rotate(90deg);
+  }
+
+
+  .alpha-example {
+    font-size: 13px;
+    /* margin-left: 10px; */
+    padding: 5px;
+    padding-left: 10px;
+    margin-top: 10px;
+
+    border-left: solid;
+    border-left-color: #47b311f1;
+    border-left-width: thick;
+
+    border-bottom: solid;
+    border-bottom-width: thin;
+    border-bottom-color: rgba(128, 128, 128, 0.32);
+
+    border-right: solid;
+    border-right-width: thin;
+    border-right-color: rgba(128, 128, 128, 0.32);
+
+    border-top: solid;
+    border-top-width: thin;
+    border-top-color: rgba(128, 128, 128, 0.32);
+  }
+
+  .numbered-example {
+    color: #2a4b6d ;
+    text-decoration: underline;
+    font-size: 14px;     
+    padding: 5px;
+    margin-top: 20px;
+
+    border-left: solid;
+    border-left-color: #d5743e;
+    border-left-width: thick;
+
+    border-bottom: solid;
+    border-bottom-width: thin;
+    border-bottom-color: rgba(128, 128, 128, 0.32);
+
+    border-right: solid;
+    border-right-width: thin;
+    border-right-color: rgba(128, 128, 128, 0.32);
+
+    border-top: solid;
+    border-top-width: thin;
+    border-top-color: rgba(128, 128, 128, 0.32);
+  }
+
+
+</style>
+
+
+
+<style type="text/css">
+  fieldset {
+    width: 100%;
+    padding: 10px;
+    background: #2798cf57;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    display: flex;
+  }
+  .panel-heading {
+    background-color: #2a4b6d;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  .right_content .btn-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .right_content .btn-group .input-field {
+    margin: 5px 0px;
+    border-radius: 5px !important;
+  }
+
+
+
+  mark {
+    background-color: yellow;
+  }
+
+  #big_one {
+    width: 100%;
+    height: 375px;
+    display: flex;
+  }
+
+
+  /* Split the screen in half */
+  .split {
+    height: 50%;
+    width: 75%;
+    /*   position: fixed; */
+    z-index: 1;
+    /*   top: 0; */
+    /*   overflow-x: hidden; */
+    padding-top: 5px;
+  }
+
+  .right_content {
+    width: 25%;
+    height: 100px;
+    /*background-color: green; */
+    margin: 10px;
+  }
+
+  .left_content {
+    width: 75%;
+    height: 100px;
+    /*background-color: green; */
+    margin: 10px;
+  }
+
+  .padding_table_long {
+    padding-left: 50px;
+  }
+
+  .padding_table_short {
+    padding-left: 25px;
+  }
+
+  .center_tabel_content {
+    text-align: center;
+  }
+
+  /* Control the left side */
+  .up {
+    top: 0;
+    display: inline-block;
+    display: -moz-inline-stack;
+    height: fit-content;
+    background-color: #b0c5d8;
+    border: 1px;
+  }
+
+  /* Control the right side */
+  .down {
+    bottom: 0;
+    background-color: white;
+    overflow: scroll;
+    height: 200px;
+  }
+
+  /* If you want the content centered horizontally and vertically */
+  .centered {
+    top: 50%;
+    left: 0%;
+    text-align: left;
+  }
+
+  .split_right {
+    width: 100%;
+
+  }
+/* 
+  .examples > *, .examples > * > * {
+    max-width: 1500px;
+  } */
+
+  #dynamic_one {
+    width: 100%;
+    border-radius: 5px;
+    background-color: #2798cf57;
+  }
+
+  /* .input-group {
+    background-color: #2798cf57;
+  } */
+
+  .ol_padleft{
+    padding-left: 20px;
+  }
+
+  #scrolled_one {
+    width: 100%;
+  }
+
+  .padding_table_short, .padding_table_long, .center_tabel_content {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  table {
+    width: 65%;
+  }
+
+  .padding_table_long,
+  .padding_table_short {
+    width: 50%;
+    vertical-align: text-top;
+  }
+
+  .padding_table_long {
+    border-left-style: solid;
+    border-left-width: 2px;
+  }
+
+  .explanation-content {
+    padding-top: 5px; 
+    padding-bottom: 5px;
+    /* background-color: #ffca6f66; */
+    background-color:antiquewhite;
+  }
+
+
+  #stupid_one {
+    display: flex;
+  }
+
+  .big-font {
+    font-size: 14px;
+  }
+  
+
+  .choices{
+    white-space: normal;
+    word-break: break-word;
+  }
+
+</style>
+
+<!-- <table>
+  <tr style="border-bottom: 2px solid black;">
+    <th>No.</th>
+    <th class="padding_table_short">Original</th>
+    <th class="padding_table_long">Modified</th>
+    <th style="text-align: center ; width:fit-content;">Option (1, 2, 3)</th>
+  </tr>
+  <tr>
+    <td>1.</td>
+    <td class="padding_table_short">Often an organization's decision to cease operations in a country has more to do with a lack of financial support than the successful completion of their programming.</td>
+    <td class="padding_table_long">Often <strong>A</strong>n <strong>watchdog</strong>'s decision to <strong>withhold</strong> operations in a <strong>globe</strong> has more to agree with a lack of <strong>biz wish</strong> than the successful <strong>initiation</strong> of their <strong>TV</strong>.</td>
+    <td class="center_tabel_content">3</td>
+  </tr>
+  <tr style="border-bottom: 2px solid black;">
+    <td></td>
+    <td colspan="3">
+      <div class="explanation-content">
+        <strong>Explanation:</strong> The changes broke the sentence meaning because the words in <strong>bold</strong> do not give the same meaning.
+      </div>
+  </td>
+  </tr>
+</table> -->

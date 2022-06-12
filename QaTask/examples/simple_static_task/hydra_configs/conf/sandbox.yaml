@@ -5,7 +5,7 @@ defaults:
   - /mephisto/provider: mturk_sandbox
 mephisto:
   provider:
-    requester_name: my_sandbox_user
+    requester_name: my_mt_user_sandbox
   blueprint:
     data_csv: ${task_dir}/theData/realData_test.csv
     task_source: ${task_dir}/server_files/actual_task.html

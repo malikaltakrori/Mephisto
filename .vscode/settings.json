@@ -3,4 +3,9 @@
   "python.linting.pylintEnabled": false,
   "python.linting.mypyEnabled": true,
   "python.linting.enabled": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[python]": {
+    // "editor.defaultFormatter": "ms-python.python"
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
 }

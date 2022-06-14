@@ -7,15 +7,18 @@ mephisto:
   provider:
     requester_name: my_mt_user
   blueprint:
-    data_csv: ${task_dir}/theData/realData_initRun.csv
+    data_csv: ${task_dir}/theData/realData_one.csv
     task_source: ${task_dir}/server_files/actual_task.html
     preview_source: ${task_dir}/server_files/actual_task_preview.html        
-    units_per_assignment: 2
+    units_per_assignment: 3
+
   task:
-    task_name: Online-testing
+    task_name: online-testing-2
     task_title: "Test: Content preservation after anonymization"
     task_description: "We want to evaluate content preservation of a sentence compared to the original one."
-    task_reward: 0.15
-    task_tags: "content preservation, evaluation, test"
+    task_reward: 0.25
+    task_tags: content preservation, evaluation, test
     # We expect to be able to handle 300 concurrent tasks without issue
     max_num_concurrent_units: 300
+    submission_timeout: 600 # 10 mins
+    assignment_duration_in_seconds: 1800

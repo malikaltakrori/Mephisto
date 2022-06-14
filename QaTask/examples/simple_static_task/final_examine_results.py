@@ -26,16 +26,16 @@ def format_for_printing_data(data):
     
     inputs = contents["inputs"]
     print(inputs)
-    inputs_string = f"Origin: {inputs['sentence1']}\nAnony.: {inputs['sentence2']}\n"
+    inputs_string = f"Origin: {inputs['original']}\nAnony.: {inputs['anon_sent']}\n"
 
     outputs = contents["outputs"]
     output_string = f"   Answer: {outputs['answers']}\n"
     
-    if inputs['correct'] == outputs['answers']:
+    # if inputs['correct'] == outputs['answers']:
         
-        output_string += "Correct: True\n"
-    else:
-        output_string += "Correct: False\n"
+    #     output_string += "Correct: True\n"
+    # else:
+    #     output_string += "Correct: False\n"
 
         
     # found_files = outputs.get("files")

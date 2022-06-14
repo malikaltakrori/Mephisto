@@ -12,6 +12,15 @@
             "console": "integratedTerminal",
             "justMyCode": true,
             "args": ["mephisto.architect.port=3232"]
+        },        
+        {
+            "name": "main one",
+            "type": "python",
+            "request": "launch",
+            "program": "/Users/malik/myCode/Mephisto/QaTask/examples/simple_static_task/main_init.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": ["conf=online_tiny"]
         },
         {
             "name": "sandbox main init",

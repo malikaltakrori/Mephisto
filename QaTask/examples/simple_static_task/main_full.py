@@ -11,6 +11,9 @@ from mephisto.abstractions.blueprints.static_html_task.static_html_blueprint imp
 from mephisto.tools.scripts import task_script
 from omegaconf import DictConfig
 
+from mephisto.data_model.qualification import QUAL_EXISTS
+from mephisto.utils.qualifications import make_qualification_dict
+
 
 @task_script(default_config_file="local")
 def main(operator, cfg: DictConfig) -> None:
@@ -25,8 +28,8 @@ def main(operator, cfg: DictConfig) -> None:
 
     shared_state.mturk_specific_qualifications = [
         {
-            # "QualificationTypeId": "2F1QJWKUDD8XADTFD2Q0G6UTO95ALH",  #<-- AMT
-            "QualificationTypeId": "2ARFPLSP75KLA8M8DH1HTEQVJT3SY6",  # <-- sandbox
+            "QualificationTypeId": "2F1QJWKUDD8XADTFD2Q0G6UTO95ALH",  #<-- AMT
+            # "QualificationTypeId": "2ARFPLSP75KLA8M8DH1HTEQVJT3SY6",  # <-- sandbox
             "Comparator": "Exists",
         },
     ]

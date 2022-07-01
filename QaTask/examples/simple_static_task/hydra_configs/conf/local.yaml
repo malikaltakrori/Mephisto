@@ -6,17 +6,17 @@ defaults:
 mephisto:
 
   blueprint:
-    data_csv: ${task_dir}/theData/realData_test.csv
+    data_csv: ${task_dir}/theData/data5_10.csv
     task_source: ${task_dir}/server_files/actual_task.html
     preview_source: ${task_dir}/server_files/actual_task_preview.html    
-    units_per_assignment: 2 #2: the task can be done twice
+    units_per_assignment: 1 #2: the task can be done twice
   task:
     task_name: testing-task-3
     task_title: "Testing with 2 datapoints"
     task_description: "We are just testing with two samples locally."
     task_reward: 0.3
-    maximum_units_per_worker: 5 #5: a person can do max 5
+    maximum_units_per_worker: 10 #5: a person can do max 5
     task_tags: "static,task,testing"
     # We expect to be able to handle 300 concurrent tasks without issue
-    max_num_concurrent_units: 5 # we need to limit these maybe to allow the same person to do multiple ones 
+    # max_num_concurrent_units: 5 # we need to limit these maybe to allow the same person to do multiple ones 
     assignment_duration_in_seconds: 300

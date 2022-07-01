@@ -11,7 +11,7 @@
             "program": "/Users/malik/myCode/Mephisto/QaTask/examples/simple_static_task/main_init.py",
             "console": "integratedTerminal",
             "justMyCode": true,
-            "args": ["mephisto.architect.port=3232"]
+            "args": ["mephisto.architect.port=3255"]
         },        
         {
             "name": "main one",

@@ -17,6 +17,6 @@ mephisto:
     task_description: "We want to evaluate content preservation of a 
                         sentence compared to the original one."
     task_reward: 0.25
-    task_tags: "content preservation, evaluation"
+    task_tags: "content preservation", "evaluation"
     # We expect to be able to handle 300 concurrent tasks without issue
     max_num_concurrent_units: 300

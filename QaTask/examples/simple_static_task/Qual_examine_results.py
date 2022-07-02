@@ -37,7 +37,7 @@ def format_for_printing_data(data):
     inputs_string = f"Origin: {inputs['original']}\nAnony.: {inputs['anon_sent']}\n"
 
     outputs = contents["outputs"]
-    output_string = f"   Answer: {outputs['answers']}\n"
+    output_string = f"   Answer: {outputs['answers']}\n" if 'answers' in outputs.keys() else f"   Answer: None\n"
     
     # if inputs['correct'] == outputs['answers']:
         

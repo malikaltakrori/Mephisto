@@ -8,10 +8,19 @@
             "name": "main init",
             "type": "python",
             "request": "launch",
-            "program": "/Users/malik/myCode/Mephisto/QaTask/examples/simple_static_task/main_init.py",
+            "program": "/media/malik/sharedArea/CodesNstuff/Mephisto/QaTask/examples/simple_static_task/main_init.py",
             "console": "integratedTerminal",
             "justMyCode": true,
-            "args": ["mephisto.architect.port=3255"]
+            "args": ["conf=online_tiny-3"]
+        },        
+        {
+            "name": "main 510",
+            "type": "python",
+            "request": "launch",
+            "program": "/media/malik/sharedArea/CodesNstuff/Mephisto/QaTask/examples/simple_static_task/main_init.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": ["conf=online_tiny-3"]
         },        
         {
             "name": "main one",

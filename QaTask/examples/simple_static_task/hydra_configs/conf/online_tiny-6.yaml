@@ -1,0 +1,26 @@
+#@package _global_
+defaults:
+  - /mephisto/blueprint: static_task
+  - /mephisto/architect: heroku
+  - /mephisto/provider: mturk
+mephisto:
+  provider:
+    requester_name: my_mt_user
+  blueprint:
+    data_csv: ${task_dir}/theData/data5_10.csv
+    task_source: ${task_dir}/server_files/actual_task.html
+    preview_source: ${task_dir}/server_files/actual_task_preview.html        
+    units_per_assignment: 5
+  task:
+    task_name: ass510-v4 # with master
+    task_title: "Content preservation after anonymization"
+    task_description: "We want to evaluate content preservation of a sentence compared to the original one."
+    task_reward: 0.30 # USD
+    task_tags: "content preservation, evaluation, test"
+    allowed_concurrent: 5
+    assignment_duration_in_seconds: 1200 # 20 mins 
+    # allowed_concurrent: 1 # a person can do one at a time
+    maximum_units_per_worker: 10 #a person can do max 10, (Here, all of them)
+    # We expect to be able to handle 300 concurrent tasks without issue
+    max_num_concurrent_units: 300 # maybe limit the number so that a user can do more than one? 
+    submission_timeout: 300 # 5 mins

@@ -12,7 +12,7 @@ mephisto:
     preview_source: ${task_dir}/server_files/actual_task_preview.html        
     units_per_assignment: 5
   task:
-    task_name: ass510-v4 # with master
+    task_name: a # with master
     task_title: "Content preservation after anonymization"
     task_description: "We want to evaluate content preservation of a sentence compared to the original one."
     task_reward: 0.30 # USD

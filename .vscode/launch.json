@@ -5,13 +5,48 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "main 5_8_5",
+            "type": "python",
+            "request": "launch",
+            "program": "/media/malik/sharedArea/CodesNstuff/Mephisto/QaTask/examples/simple_static_task/main_init.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": ["conf=online_medium-1"]
+        }, 
+        {
+            "name": "gen all 8",
+            "type": "python",
+            "request": "launch",
+            "program": "/media/malik/sharedArea/CodesNstuff/Mephisto/QaTask/examples/simple_static_task/genRandData.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+        },
+        {
+            "name": "Run all 8",
+            "type": "python",
+            "request": "launch",
+            "program": "/media/malik/sharedArea/CodesNstuff/Mephisto/QaTask/examples/simple_static_task/main_init.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": ["conf=manUalEval-2", "mephisto.architect.port=3030"]
+        },
+        {
             "name": "main init",
             "type": "python",
             "request": "launch",
             "program": "/media/malik/sharedArea/CodesNstuff/Mephisto/QaTask/examples/simple_static_task/main_init.py",
             "console": "integratedTerminal",
             "justMyCode": true,
-            "args": ["conf=online_tiny-3"]
+            "args": ["conf=manUalEval-2"]
+        },
+        {
+            "name": "Malik Questions",
+            "type": "python",
+            "request": "launch",
+            "program": "/media/malik/sharedArea/CodesNstuff/Mephisto/QaTask/examples/simple_static_task/main_init.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": ["conf=manUalEval"]
         },        
         {
             "name": "main 510",
@@ -20,7 +55,7 @@
             "program": "/media/malik/sharedArea/CodesNstuff/Mephisto/QaTask/examples/simple_static_task/main_init.py",
             "console": "integratedTerminal",
             "justMyCode": true,
-            "args": ["conf=online_tiny-3"]
+            "args": ["conf=online_tiny-7"]
         },        
         {
             "name": "main one",
@@ -53,7 +88,7 @@
             "name": "Examin",
             "type": "python",
             "request": "launch",
-            "program": "/Users/malik/myCode/Mephisto/QaTask/examples/simple_static_task/Qual_examine_results.py",
+            "program": "/media/malik/sharedArea/CodesNstuff/Mephisto/QaTask/examples/simple_static_task/Qual_examine_results.py",
             "console": "integratedTerminal",
             "justMyCode": true
         }

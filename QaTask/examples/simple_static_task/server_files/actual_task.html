@@ -221,7 +221,7 @@
                     </td>
                     </tr>                    
                   </table>                                
-                  <li class="alpha-example">The rephrased sentences is not grammatical.</li>                
+                  <li class="alpha-example">The rephrased sentences is not grammatical but the meaning can still be inferred.</li>                
                   <table>
                     <tr style="border-bottom: 2px solid black;">
                       <th class="padding_table_short">Original</th>
@@ -364,6 +364,28 @@
                 </ol>
                 <li class="numbered-example">Important information in the origial sentence is missing from the modified sentence. <b>(Content not preserved)</b></li>
                 <ol class="ol_padleft" type="a">
+                  <li class="alpha-example">The two sentences are unrelated.</li>                
+                  <table>
+                    <tr style="border-bottom: 2px solid black;">
+                      <th class="padding_table_short">Original</th>
+                      <th class="padding_table_long">Modified version(s)</th>
+                    </tr>
+                    <tr>
+                      <td class="padding_table_short">I was in a hurry.</td>
+                      <td class="padding_table_long">Jim went to the gym.</td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" style="padding-bottom: 10px;"><b>Context</b>: Today I left work late. <mark>&lt;the original sentence was here&gt;</mark>. I got home at 8pm.</td>
+                    </tr>
+                    <tr style="border-bottom: 2px solid black;">                      
+                      <td colspan="2">
+                        <div class="explanation-content">
+                          <strong>Explanation:</strong> The modified sentence is not related to the original sentence.
+                        </div>
+                    </td>
+                    </tr>
+                    
+                  </table> 
                   <li class="alpha-example">Adding/removing negation</li>                
                   <table>
                     <tr style="border-bottom: 2px solid black;">
@@ -525,7 +547,7 @@
   $(function () {
     modal_body = $("#modal");
     $("#instructions").clone().appendTo(modal_body);
-    $(".modal").modal("show");
+    $(".modal").modal("show"); 
   });
 
   $(document).ready(function(){

@@ -1,0 +1,25 @@
+#@package _global_
+defaults:
+  - /mephisto/blueprint: static_task
+  - /mephisto/architect: local 
+  - /mephisto/provider: mock 
+mephisto:
+  blueprint:
+    # data_csv: ${task_dir}/theData/realData_5m8q5a.csv
+    data_csv: ${task_dir}/theData/atten_qs.csv
+    task_source: ${task_dir}/server_files/actual_task.html
+    preview_source: ${task_dir}/server_files/actual_task_preview.html        
+    units_per_assignment: 1
+  task:
+    task_name: maleks-85a # with master
+    task_title: "Content preservation after anonymization"
+    task_description: "We want to evaluate content preservation of a sentence compared to the original one."
+    task_reward: 0.30 # USD
+    task_tags: "content preservation, evaluation, test"
+    allowed_concurrent: 5
+    assignment_duration_in_seconds: 900 # 15 mins 
+    # allowed_concurrent: 1 # a person can do one at a time
+    maximum_units_per_worker: 400 #a person can do max 10, (Here, all of them)
+    # We expect to be able to handle 300 concurrent tasks without issue
+    max_num_concurrent_units: 300 # maybe limit the number so that a user can do more than one? 
+    submission_timeout: 1800 # 30 mins
